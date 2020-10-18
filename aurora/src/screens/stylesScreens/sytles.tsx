@@ -2,6 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 
+ .read-post {
+        display: none;
+        transition: background 0.2s;
+    }
+
     width: 100vw;
     min-heigth: 100vh;
 
@@ -37,17 +42,24 @@ export const Header = styled.header`
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
+        position: relative;
+
+        width: 100%;
 
         top: 8rem;
-        left: -0.98rem;
+        margin-left: -35rem;
         z-index: 4;
 
         cursor: pointer;
     }
 
+    .show-hidden-post:hover {
+        zoom: 107%;
+    }
+
     .show-hidden-post:active {
-        color: background: linear-gradient(154.16deg, #fdf8f5 7.85%, #FFFFFF 91.03%);
+        color: green;
     }
 
     .message-post {
@@ -59,6 +71,8 @@ export const Header = styled.header`
         width: 100%;
 
         color: rgba(169, 169, 169, 0.9);
+
+        margin-top: 7rem;
     }
 
     .message-post {
@@ -69,25 +83,27 @@ export const Header = styled.header`
 
 export const FirstImg = styled.img`
 
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    width: 50vw;
+    width: 45vw;
     heigth: auto;
 
-    margin-top: 5rem;
+    top: 5rem;
     border-radius: 0.8rem;
     position: relative;
 
     user-select: none;
 
     &:hover {
-        width: 700vw;
-        height: auto;
+
         border-radius: 0.8rem;
-        transition: width 2s, height 0.2s;
+        -webkit-box-shadow: 10px 10px 5px 5px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 5px 5px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 5px 5px rgba(0,0,0,0.75);
+        transition: delay 0.2s;
     }
 
 `;
@@ -115,13 +131,49 @@ export const GroupElements = styled.section`
     justify-content: center;
 
     width: 100vw;
-    margin-top: 2rem;
+    margin-top: 20rem;
 
 
-     .read-post {
-        display: none;
-        transition: background 0.2s;
+    
+`;
+
+export const HeaderToDescriptionToPage = styled.header`
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    indicator-active-or-disable {
+        
+       
+        top: auto;
+        left: 2rem;
+        position: relative;
+        color: rgba(169, 169, 169, 0.9);
+
+        width: 100%;
     }
+
+    h1 {
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        
+        color: rgba(169, 169, 169, 0.9);
+        font-size: calc(1.3rem + 0.8vmin);
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+        width: 100%;
+
+        text-align: center;
+        padding: 0 10rem;
+    }
+
 `;
 
 export const DescriptionToPage = styled.article`
@@ -140,36 +192,11 @@ export const DescriptionToPage = styled.article`
     z-index: 1;
     border-radius: 0.8rem;
 
-    h1 {
-        
-        color: rgba(169, 169, 169, 0.9);
-        font-size: calc(1.3rem + 0.8vmin);
-        margin-top: 4rem;
-        margin-bottom: 2rem;
-        width: 50%;
-
-        text-align: center;
-    }
-
     p {
         font-size: calc(1rem + 2vmin);
         color: rgba(169, 169, 169, 0.9);
         width: 50%;
     }
-
-    indicator-active-or-disable {
-        
-        display: inline-flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-
-        top: 1rem;
-        left: -23rem;
-        position: relative;
-        color: rgba(169, 169, 169, 0.9);
-    }
-    
 
     &:hover {
         width: 100vw;
@@ -207,6 +234,7 @@ export const ImgToDescription = styled.img`
     justify-content: center;
 
     magin: 2rem auto;
+    bottom: 0.8rem;
     left: -5rem;
 
     position: relative;
