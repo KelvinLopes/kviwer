@@ -2,6 +2,18 @@ import styled from 'styled-components';
 
 export const Dock = styled.aside`
 
+.input {
+    display: none;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.8rem;
+
+    width: 50vw;
+    height: 10vh;
+}
+
     user-select: none;
     height: auto;
     width: 100vw;
@@ -9,7 +21,7 @@ export const Dock = styled.aside`
     border-radius: 0 0 0.8rem 0.8rem;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 

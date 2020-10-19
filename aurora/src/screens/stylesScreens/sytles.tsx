@@ -111,16 +111,20 @@ export const FirstImg = styled.img`
 export const BackgroundImg = styled.img`
 
     width: 100vw;
-    heigth: 100vh;
+    min-height: 100vh;
+    pointer-events: none;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 0;
-    top: 0;
+    margin: 0 auto;
+    top: -8rem;
     left: 0;
-    position: fiixed;
+    right: 0;
+    position: fixed;
+
+    user-select: none;
 `;
 
 export const GroupElements = styled.section`
@@ -196,6 +200,8 @@ export const DescriptionToPage = styled.article`
         font-size: calc(1rem + 2vmin);
         color: rgba(169, 169, 169, 0.9);
         width: 50%;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
     }
 
     &:hover {
@@ -233,7 +239,7 @@ export const ImgToDescription = styled.img`
     align-itmes: center;
     justify-content: center;
 
-    magin: 2rem auto;
+    magin: 1rem auto;
     bottom: 0.8rem;
     left: -5rem;
 

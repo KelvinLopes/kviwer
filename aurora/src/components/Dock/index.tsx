@@ -1,10 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Dock, GroupIcons, Icons } from './styles/styles';
-import { MdSearch, MdHome, MdHeadsetMic, MdBook } from 'react-icons/md';
+import { MdSearch, MdHome, MdHeadsetMic, MdBook, MdInfo } from 'react-icons/md';
 
 
 export default function DockBar() {
+
+    function ShowHidennInput() {
+     const input = document.querySelector('.input') as HTMLElement;
+
+
+        if(input.style.display === 'none') {
+            input.style.display = 'flex';
+        }else {
+            input.style.display = 'none';
+        }
+    } 
 
     return(
         <Dock>
@@ -21,7 +32,7 @@ export default function DockBar() {
                 </Icons>
 
                  <Icons>
-                    <Link to="/">
+                    <Link to="/posts">
                         <MdBook 
                             className="circle-icon"
                             color="rgba(141, 144, 215, 1)"
@@ -49,10 +60,24 @@ export default function DockBar() {
                             color="rgba(141, 144, 215, 1)"
                             size="5rem"
                             title="Home"
+                            onClick={ShowHidennInput}
+                        />
+                    </Link>
+                </Icons>
+
+                <Icons>
+                    <Link to="/">
+                        <MdInfo 
+                            className="circle-icon"
+                            color="rgba(141, 144, 215, 1)"
+                            size="5rem"
+                            title="Info"
                         />
                     </Link>
                 </Icons>
             </GroupIcons>
+
+            <input placeholder="Faça sua busca" className="input"/>
         </Dock>
 
     );
