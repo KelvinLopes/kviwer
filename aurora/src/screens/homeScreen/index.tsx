@@ -1,4 +1,5 @@
 import React from 'react';
+import Dock from '../../components/Dock';
 
 import {
      BackgroundImg, 
@@ -54,6 +55,7 @@ export default function HomeScreen() {
     return (
         <>
             <Container>
+                <Dock />
                 {/*<BackgroundImg src = {wallpaper} alt="wallpaper" />*/}
                 <Header>
                     <FaCircle 
@@ -76,7 +78,7 @@ export default function HomeScreen() {
                             <ImgToDescription className="img-description-zero-left" src={img} alt="img Fenonemo Aurora Boreal" />
                             Trabalhando em um projeto incrivel que visa uma interface, moderna,
                             limpa, bonita e inteligente.
-                            O nome Aurora, não é atoa, é bonito de se ver esse fenonemo.
+                            O nome Aurora, não é atoa, é bonito de se ver esse fenômeno.
                         </p>
                         <p>
                             Prepare se para ver algo incrivél!
