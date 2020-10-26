@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Dock, GroupIcons, Icons } from './styles/styles';
 import { MdSearch, MdHome, MdHeadsetMic, MdBook, MdInfo } from 'react-icons/md';
+import Notifications from './../Notifications';
 
 
 export default function DockBar() {
@@ -74,6 +75,10 @@ export default function DockBar() {
                             title="Info"
                         />
                     </Link>
+                </Icons>
+
+                <Icons>
+                    <Notifications />
                 </Icons>
             </GroupIcons>
 
