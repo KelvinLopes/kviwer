@@ -8,7 +8,7 @@ export const Container = styled.div`
     }
 
     width: 100vw;
-    min-heigth: 100vh;
+    min-height: 100vh;
 
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@ export const Container = styled.div`
 export const Header = styled.header`
 
     width: 100vw;
-    min-heigth: 100vh;
+    min-height: 100vh;
 
     display: flex;
     flex-direction: column;
@@ -89,7 +89,7 @@ export const FirstImg = styled.img`
     justify-content: center;
 
     width: 45vw;
-    heigth: auto;
+    height: auto;
 
     top: 5rem;
     border-radius: 0.8rem;
@@ -137,8 +137,6 @@ export const GroupElements = styled.section`
     width: 100vw;
     margin-top: 20rem;
 
-
-    
 `;
 
 export const HeaderToDescriptionToPage = styled.header`
@@ -186,7 +184,7 @@ export const DescriptionToPage = styled.article`
     flex-direction: column;
     align-items: center;
     width: 60vw;
-    heigth: auto;
+    height: auto;
     background: rgba(250, 250, 250, 0.5);
     margin-bottom: 5rem;
 
@@ -206,10 +204,10 @@ export const DescriptionToPage = styled.article`
 
     &:hover {
         width: 100vw;
-        heigth: 210vh;
+        height: 210vh;
         margin-top: auto;
         margin-bottom: auto;
-        transition: width 2s; height 0.2s;
+        transition: width 2s  height 0.2s;
 
         background: rgba(5, 5, 5, 1);
         border-radius: 0.8rem 0.8rem 0 0;
@@ -233,13 +231,13 @@ export const DescriptionToPage = styled.article`
 export const ImgToDescription = styled.img`
 
     width: 45vw;
-    heigth: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
-    align-itmes: center;
+    align-items: center;
     justify-content: center;
 
-    magin: 1rem auto;
+    margin: 1rem auto;
     bottom: 0.8rem;
     left: -5rem;
 
@@ -248,7 +246,7 @@ export const ImgToDescription = styled.img`
     &:hover {
 
         width: 50vw;
-        heigth: auto;
+        height: auto;
         border-radius: 0.8rem;
         transition: width 2s, heigth 0.2s;
     }

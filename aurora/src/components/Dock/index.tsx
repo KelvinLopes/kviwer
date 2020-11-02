@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Dock, GroupIcons, Icons } from './styles/styles';
+import { Dock, GroupIcons, Icons, Input } from './styles/styles';
 import { MdSearch, MdHome, MdHeadsetMic, MdBook } from 'react-icons/md';
 import Notifications from './../Notifications';
 import Info from './../Info';
@@ -76,7 +76,7 @@ export default function DockBar() {
                 </Icons>
             </GroupIcons>
 
-            <input placeholder="Faça sua busca" className="input"/>
+            <Input placeholder="Faça sua busca" className="input"/>
         </Dock>
 
     );

@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { lighten } from 'polished';
 
@@ -22,7 +22,7 @@ export const Container = styled.div`
     img {
         width: 28vw;
         height: 60vh;
-        fit-object: cover;
+        object-fit: cover;
         border-radius: 1rem;
         margin: 1.5rem auto;
         position: relative;
@@ -48,7 +48,6 @@ export const Container = styled.div`
     }
 
     position: relative;
-    z-index: 6;
 
 `;
 
@@ -58,9 +57,9 @@ export const Badge = styled.button`
     border: 0;
     position: relative;
 
-    ${(props: {hasUnread: boolean} ) => 
-        props.hasUnread &&
-        css`
+    ${(props: { hasUnread: boolean }) =>
+		props.hasUnread &&
+		css`
             &::after {
                 position: absolute;
                 right: 0;
@@ -84,7 +83,7 @@ export const NotificationsList = styled.div`
     top: calc(100% + 20px);
     background: rgba(250, 250, 250, 0.9);
     border-radius: 0.8rem;
-    display ${(props: { visible: boolean}) => (props.visible ? 'block' : 'none' ) };
+    display:  ${(props: { visible: boolean }) => (props.visible ? 'block' : 'none')};
 
     &::before {
         content: '';
@@ -133,9 +132,9 @@ export const Notification = styled.div`
         color: ${lighten(0.2, 'purple')};
     }
 
-    ${(props : { unread : boolean}) => 
-        props.unread &&
-        css`
+    ${(props: { unread: boolean }) =>
+		props.unread &&
+		css`
             &::after {
                 content: '';
                 display: inline-block;
@@ -146,5 +145,5 @@ export const Notification = styled.div`
                 margin-left: 10px;
             }
         `}
-
+	}
 `;

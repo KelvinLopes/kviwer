@@ -7,7 +7,8 @@ import {
     Badge, 
     NotificationsList, 
     Scroll, 
-    Notification} 
+    Notification
+} 
     from './styles/styles';
 
 

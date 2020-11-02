@@ -2,18 +2,6 @@ import styled from 'styled-components';
 
 export const Dock = styled.aside`
 
-.input {
-    display: none;
-
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.8rem;
-
-    width: 50vw;
-    height: 10vh;
-}
-
     user-select: none;
     height: auto;
     width: 100vw;
@@ -76,12 +64,57 @@ export const Icons = styled.li`
             zoom: 170%;
             color: rgba(141, 144, 215, 0.5);
 
-            /*-webkit-box-shadow: 5px 5px 5px 5px rgba(141, 144, 215, 0.9);
-            -moz-box-shadow: 5px 5px 5px 5px rgba(141, 144, 215, 0.9);
-            box-shadow: 5px 5px 5px 5px rgba(141, 144, 215, 0.9); */
-
             transition: delay 0.2s;
         }
     }
 
 `;
+
+export const Input = styled.input`
+
+    display: none;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.8rem;
+
+    width: 50vw;
+    height: 10vh;
+
+    text-align: center;
+    color: rgba(169, 169, 169, 1);
+    font-weight: bold;
+    font-size: 1rem;
+    font-style: normal;
+    outline: none;
+
+    transition: background-color 0.2s;
+
+    &:hover {
+      border: 3px solid purple;
+      background: rgba(5, 5, 5, 1);
+      color: rgba(250, 250, 250, 1);
+    }
+
+    & ::before {
+      content: ' ';
+      position: absolute;
+      left: calc(50% - 5.7rem);
+      top: 20px;
+      width: 50rem;
+      height: auto;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 20px solid rgba(250, 250, 250, 1);
+    }
+
+    &::placeholder {
+       color: rgba(169, 169, 169, 1);
+       font-weight: bold;
+       text-align: center;
+       font-size: 1rem;
+       font-style: italic;
+    }
+
+`
