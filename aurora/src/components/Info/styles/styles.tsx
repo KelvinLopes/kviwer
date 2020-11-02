@@ -7,8 +7,8 @@ export const Container = styled.div`
     z-index: 17;
   }
 
-.minize {
-	display: none;
+.minimize {
+  display: none;
 	color: rgba(124, 0, 128, 1);
 }
 
@@ -113,7 +113,7 @@ textarea {
         }
     }
 
-    .indicator-active-or-close {
+      .indicator-active-or-close {
         color: purple;
 
         display: flex;
@@ -125,10 +125,6 @@ textarea {
         left: calc(50% - 19rem);
     }
 
-    .indicator-active-or-close:hover {
-        color: red;
-    }
-
     position: relative;
     z-index: 6;
 `;
@@ -137,28 +133,32 @@ export const GroupElementsInfo = styled.div`
 
     position: absolute;
     width: 40rem;
-    left: calc(50% - 32rem);
+   left: calc(50% - 32rem);
     top: calc(100% + 0.8rem);
     margin:  0 auto;
     top: -0.5rem;
     background: rgba(250, 250, 250, 0.9);
     border-radius: 0.8rem;
     padding: 15px 5px;
-    display: ${(props: { visible: boolean}) => (props.visible ? 'flex' : 'none' ) };
+    display: ${(props: { visible: boolean}) => (props.visible ? 'block' : 'none' ) };
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex: 1;
 
     &:hover {
         background: rgba(5, 5, 5, 1);
         transition: delay 0.5s;
 
         .indicator-active-or-close {
-          color: rgba(124,0, 128, 0.8);
+          color: rgba(206, 74, 211, 0.8);
         }
     }
+    .indicator-active-or-close:active {
+        color: rgba(246, 0, 22, 0.9);
+    }
 
-    .minize:active {
+    .minimize:active {
       color: rgba(132, 132, 132, 1);
     }
 
@@ -168,14 +168,20 @@ export const GroupElementsInfo = styled.div`
 
     .buttons-div {
       display: flex;
-      width: 95%;;
+      width: 60%;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
+      flex: 1;
+
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      position: relative;
     }
 
     .space-to-final-button {
-      width: 5%;
+      width: 40%;
     }
 
     z-index: 10;
@@ -324,6 +330,7 @@ export const Button = styled.li`
     font-size: 1rem;
 
     border-radius: 0.5rem;
+    cursor: pointer;
 
     &:hover {
         background: rgba(250, 250, 250, 0.9);

@@ -14,7 +14,7 @@ import {
 
 import { FaCircle, FaArrowCircleDown } from 'react-icons/fa';
 
-import wallpaper from '../../assents/wallpapers/Aurora_Boreal_wallpaper.jpg';
+import wallpaper from '../../assets/wallpapers/Aurora_Boreal_wallpaper.jpg';
 
 export default function HomeScreen() {
 

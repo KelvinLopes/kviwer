@@ -24,7 +24,7 @@ export default function Info() {
   const buttonFeedBack = document.querySelector('.button-feedback') as HTMLElement;
   const buttonHelp = document.querySelector('.button-help') as HTMLElement;
 
-const minizeButton = document.querySelector('.minize') as HTMLElement;
+const minimizeButton = document.querySelector('.minimize') as HTMLElement;
 const maximizeButton = document.querySelector('.maximize') as HTMLElement;
 const groupElements = document.querySelector('.group-elements') as HTMLElement;
 
@@ -85,18 +85,21 @@ const titleInfo = document.querySelector('.title-info') as HTMLElement;
     function resizeScreenButton() {
       if (groupElements.style.width === '40rem') {
           groupElements.style.width = '100vw';
+           groupElements.style.maxWidth = '100vw';
           groupElements.style.height = '100vh';
-          groupElements.style.left='calc(50% - 50.8rem)';
-          minizeButton.style.display = 'block';
+          groupElements.style.flex = '1';
+          groupElements.style.left='calc(50% - 50.20rem)';
+          minimizeButton.style.display = 'block';
           maximizeButton.style.display = 'none';
-          minizeButton.style.color = 'rgba(124, 0, 128, 1)';
+          minimizeButton.style.color = 'rgba(124, 0, 128, 1)';
           groupElements.style.borderRadius = '0';
       }
        else {
           groupElements.style.width = '40rem';
           groupElements.style.height = 'auto';
           groupElements.style.left='calc(50% - 32rem)';
-          minizeButton.style.display = 'none';
+         groupElements.style.flex = '1';
+          minimizeButton.style.display = 'none';
           maximizeButton.style.display = 'block';
           maximizeButton.style.color = 'rgba(124, 0, 128, 1)';
           groupElements.style.borderRadius = '0.8rem';
@@ -125,7 +128,7 @@ const titleInfo = document.querySelector('.title-info') as HTMLElement;
             title='Fechar'
           />
 
-       <span className="space-to-final-button"> </span>
+         <span className="space-to-final-button"> </span>
 
           <FiMaximize2
             className="indicator-resize maximize"
@@ -136,7 +139,7 @@ const titleInfo = document.querySelector('.title-info') as HTMLElement;
           />
 
           <FiMinimize2
-            className="indicator-resize minize"
+            className="indicator-resize minimize"
             size={25}
             onClick={resizeScreenButton}
             color="rgba(124, 0, 128, 1)"

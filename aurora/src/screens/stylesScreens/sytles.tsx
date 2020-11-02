@@ -187,6 +187,7 @@ export const DescriptionToPage = styled.article`
     height: auto;
     background: rgba(250, 250, 250, 0.5);
     margin-bottom: 5rem;
+  
 
     position: relative;
 
@@ -208,6 +209,7 @@ export const DescriptionToPage = styled.article`
         margin-top: auto;
         margin-bottom: auto;
         transition: width 2s  height 0.2s;
+        flex: 1;
 
         background: rgba(5, 5, 5, 1);
         border-radius: 0.8rem 0.8rem 0 0;
@@ -221,7 +223,7 @@ export const DescriptionToPage = styled.article`
             left: 0;
         }
 
-        indicator-active-or-disable {
+        .indicator-active-or-disable {
             color: purple;
         }
 
