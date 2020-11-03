@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Dock, GroupIcons, Icons, Input } from './styles/styles';
-import { MdSearch, MdHome, MdHeadsetMic, MdBook } from 'react-icons/md';
+import { MdSearch, MdHome, MdHeadsetMic, MdBook, MdInfo } from 'react-icons/md';
 import Notifications from './../Notifications';
-import Info from './../Info';
 
 
 export default function DockBar() {
@@ -68,7 +67,15 @@ export default function DockBar() {
                 </Icons>
 
                 <Icons>
-                    <Info/>
+                     <Link to="/info">
+                        <MdInfo
+                            className="circle-icon"
+                            color="rgba(141, 144, 215, 1)"
+                            size="5rem"
+                            title="Home"
+                            onClick={ShowHidennInput}
+                        />
+                        </Link>
                 </Icons>
 
                 <Icons>

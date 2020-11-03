@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { MdInfo } from 'react-icons/md';
+import React  from 'react';
 import { FaCircle } from 'react-icons/fa';
 import { FiMaximize2, FiMinimize2 } from 'react-icons/fi';
+import Dock from '../../components/Dock';
 
 import {
   Container,
@@ -9,7 +9,6 @@ import {
   GroupElementsInfo,
   GroupButtons,
   Button,
-  OpenClose,
   ButtonBody,
   TextArea,
   TextButtonAboutSubmit
@@ -18,29 +17,20 @@ import {
 
 export default function Info() {
 
-  const [visible, setVisible] = useState(false);
-
-  const buttonAbout = document.querySelector('.button-about') as HTMLElement;
-  const buttonFeedBack = document.querySelector('.button-feedback') as HTMLElement;
-  const buttonHelp = document.querySelector('.button-help') as HTMLElement;
-
-const minimizeButton = document.querySelector('.minimize') as HTMLElement;
-const maximizeButton = document.querySelector('.maximize') as HTMLElement;
-const groupElements = document.querySelector('.group-elements') as HTMLElement;
-
-const divFeedback = document.querySelector('.div-feedback') as HTMLElement;
-const divAbout = document.querySelector('.div-about') as HTMLElement;
-const divHelp = document.querySelector('.div-help') as HTMLElement;
-const img = document.querySelector('.img') as HTMLElement;
-const titleInfo = document.querySelector('.title-info') as HTMLElement;
-
   const imgInfo = "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80";
 
-  function handleToggleVisibleInfo() {
-    setVisible(!visible);
-  }
-
   function Feedback() {
+
+    const buttonAbout = document.querySelector('.button-about') as HTMLElement;
+    const buttonFeedBack = document.querySelector('.button-feedback') as HTMLElement;
+    const buttonHelp = document.querySelector('.button-help') as HTMLElement;
+
+    const divFeedback = document.querySelector('.div-feedback') as HTMLElement;
+   const divAbout = document.querySelector('.div-about') as HTMLElement;
+    const divHelp = document.querySelector('.div-help') as HTMLElement;
+    const img = document.querySelector('.img') as HTMLElement;
+    const titleInfo = document.querySelector('.title-info') as HTMLElement;
+
     divFeedback.style.display = 'block';
     divHelp.style.display = 'none';
     divAbout.style.display = 'none';
@@ -55,6 +45,17 @@ const titleInfo = document.querySelector('.title-info') as HTMLElement;
   }
 
     function About() {
+
+    const buttonAbout = document.querySelector('.button-about') as HTMLElement;
+    const buttonFeedBack = document.querySelector('.button-feedback') as HTMLElement;
+    const buttonHelp = document.querySelector('.button-help') as HTMLElement;
+
+    const divFeedback = document.querySelector('.div-feedback') as HTMLElement;
+    const divAbout = document.querySelector('.div-about') as HTMLElement;
+    const divHelp = document.querySelector('.div-help') as HTMLElement;
+    const img = document.querySelector('.img') as HTMLElement;
+    const titleInfo = document.querySelector('.title-info') as HTMLElement;
+
     divFeedback.style.display = 'none';
     divHelp.style.display = 'none';
     divAbout.style.display = 'block';
@@ -69,6 +70,17 @@ const titleInfo = document.querySelector('.title-info') as HTMLElement;
   }
 
     function Help() {
+
+    const buttonAbout = document.querySelector('.button-about') as HTMLElement;
+    const buttonFeedBack = document.querySelector('.button-feedback') as HTMLElement;
+    const buttonHelp = document.querySelector('.button-help') as HTMLElement;
+
+    const divFeedback = document.querySelector('.div-feedback') as HTMLElement;
+    const divAbout = document.querySelector('.div-about') as HTMLElement;
+    const divHelp = document.querySelector('.div-help') as HTMLElement;
+    const img = document.querySelector('.img') as HTMLElement;
+    const titleInfo = document.querySelector('.title-info') as HTMLElement;
+
     divFeedback.style.display = 'none';
     divHelp.style.display = 'block';
     divAbout.style.display = 'none';
@@ -82,49 +94,61 @@ const titleInfo = document.querySelector('.title-info') as HTMLElement;
     }
   }
 
-    function resizeScreenButton() {
-      if (groupElements.style.width === '40rem') {
+    function resizeScreenMaxButton() {
+
+    const minimizeButton = document.querySelector('.minimize') as HTMLElement;
+    const maximizeButton = document.querySelector('.maximize') as HTMLElement;
+    const groupElements = document.querySelector('.group-elements') as HTMLElement;
+
+      groupElements.style.width = '45vw';
+
+      if (groupElements.style.width === '45vw') {
           groupElements.style.width = '100vw';
            groupElements.style.maxWidth = '100vw';
           groupElements.style.height = '100vh';
           groupElements.style.flex = '1';
-          groupElements.style.left='calc(50% - 50.20rem)';
+          groupElements.style.left='0';
           minimizeButton.style.display = 'block';
           maximizeButton.style.display = 'none';
           minimizeButton.style.color = 'rgba(124, 0, 128, 1)';
           groupElements.style.borderRadius = '0';
+          groupElements.style.top = '0';
+          groupElements.style.transition= 'width 2s, height 4s';
       }
-       else {
-          groupElements.style.width = '40rem';
+  }
+
+   function resizeScreenMinButton() {
+
+    const minimizeButton = document.querySelector('.minimize') as HTMLElement;
+    const maximizeButton = document.querySelector('.maximize') as HTMLElement;
+    const groupElements = document.querySelector('.group-elements') as HTMLElement;
+
+    groupElements.style.width = '100vw';
+
+       if (groupElements.style.width === '100vw') {
+          groupElements.style.width = '45vw';
           groupElements.style.height = 'auto';
-          groupElements.style.left='calc(50% - 32rem)';
+          groupElements.style.left='calc(50vw / 2)';
          groupElements.style.flex = '1';
           minimizeButton.style.display = 'none';
           maximizeButton.style.display = 'block';
           maximizeButton.style.color = 'rgba(124, 0, 128, 1)';
           groupElements.style.borderRadius = '0.8rem';
+          groupElements.style.top = 'calc(100% + 7rem)';
+          groupElements.style.transition= 'width 2s, height 4s';
       }
     }
 
   return (
     <Container>
-      <OpenClose onClick={handleToggleVisibleInfo}>
-        <MdInfo
-          className="circle-icon"
-          color="rgba(141, 144, 215, 1)"
-          size="5rem"
-          title="Info"
-        />
-      </OpenClose>
+      <Dock />
       <GroupElementsInfo
         className="group-elements"
-        visible={visible}
       >
         <div className="buttons-div">
           <FaCircle
             className="indicator-active-or-close"
             size={30}
-            onClick={handleToggleVisibleInfo}
             title='Fechar'
           />
 
@@ -133,7 +157,7 @@ const titleInfo = document.querySelector('.title-info') as HTMLElement;
           <FiMaximize2
             className="indicator-resize maximize"
             size={25}
-            onClick={resizeScreenButton}
+            onClick={resizeScreenMaxButton}
             color="rgba(124, 0, 128, 1)"
             title="Maximizar"
           />
@@ -141,7 +165,7 @@ const titleInfo = document.querySelector('.title-info') as HTMLElement;
           <FiMinimize2
             className="indicator-resize minimize"
             size={25}
-            onClick={resizeScreenButton}
+            onClick={resizeScreenMinButton}
             color="rgba(124, 0, 128, 1)"
             title="Restaurar"
           />
@@ -159,6 +183,7 @@ const titleInfo = document.querySelector('.title-info') as HTMLElement;
             className="img"
             src={imgInfo}
             alt="Info img"
+            draggable={false}
           />
           <div className="div-about">
             <h2 className="title-info">Aurora</h2>

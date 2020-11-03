@@ -23,7 +23,7 @@ export const Dock = styled.aside`
     &:hover {
         height: 25vh;
         background: rgba(235, 242, 245, 0.9);
-
+        transition: background-color 0.3s;
         .circle-icon {
             z-index: 5;
         }

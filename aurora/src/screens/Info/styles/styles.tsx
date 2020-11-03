@@ -2,11 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 
-  z-index: 17;
-  &:hover {
-    z-index: 17;
-  }
-
 .minimize {
   display: none;
 	color: rgba(124, 0, 128, 1);
@@ -36,17 +31,17 @@ export const Container = styled.div`
 
 .div-help {
 	display: none;
-	width: 100%;
+  width: 100%;
 }
 
 .help p {
+  padding: 0 3rem;
 	text-align: left;
 }
 
 textarea {
 	resize: none;
 }
-
 
     h2 {
         color: rgba(169,169,169, 1);
@@ -59,10 +54,24 @@ textarea {
         justify-content: center;
         position: relative;
 
-        left: 0.8rem;
         margin: 2rem auto;
         text-align: center;
     }
+
+        h3 {
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+        position: relative;
+        margin: 2rem auto;
+      
+        font-size: 1rem;    
+        margin: 2rem auto;
+      }
 
     img {
         width: 10vw;
@@ -114,41 +123,46 @@ textarea {
     }
 
       .indicator-active-or-close {
-        color: purple;
 
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         justify-content: center;
-
         position: relative;
-        left: calc(50% - 19rem);
+        color: purple;
     }
 
     position: relative;
-    z-index: 6;
 `;
 
 export const GroupElementsInfo = styled.div`
 
+    user-select: none;
     position: absolute;
-    width: 40rem;
-   left: calc(50% - 32rem);
-    top: calc(100% + 0.8rem);
+    width: 45vw;
+    max-width: 100vw;
+    top: calc(100% + 7rem);
+    left: calc( 50vw / 2 );
     margin:  0 auto;
-    top: -0.5rem;
     background: rgba(250, 250, 250, 0.9);
     border-radius: 0.8rem;
     padding: 15px 5px;
-    display: ${(props: { visible: boolean}) => (props.visible ? 'block' : 'none' ) };
+  transition: background-color 0.5s;
+
+& + div {
+    width: 100vw;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     flex: 1;
+    box-shadow: 4px 4px 0 0 rgba(132, 132, 132, 0.5);
+} 
 
     &:hover {
         background: rgba(5, 5, 5, 1);
         transition: delay 0.5s;
+        z-index: 10;
 
         .indicator-active-or-close {
           color: rgba(206, 74, 211, 0.8);
@@ -168,11 +182,18 @@ export const GroupElementsInfo = styled.div`
 
     .buttons-div {
       display: flex;
-      width: 60%;
+      width: 95%;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
       flex: 1;
+
+      & + svg {
+         display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
 
       margin: 0 auto;
       left: 0;
@@ -181,14 +202,11 @@ export const GroupElementsInfo = styled.div`
     }
 
     .space-to-final-button {
-      width: 40%;
+      width: 5%;
     }
 
-    z-index: 10;
-    transition: width 0.2s height 0.2s;
-
+    transition: width 0.2s,  height 0.2s;
 `;
-
 export const ButtonBody = styled.button`
 
     width: 180px;
@@ -236,13 +254,21 @@ export const TextButtonAboutSubmit = styled.text`
 
 export const  TextArea = styled.textarea`
 
+    width: 30vw;
     min-height: 7rem;
-    width: 30rem;
-    max-width: 50rem;
-    resize: none;
-    padding: 1.6rem;
-    line-height: 28px;
+    flex: 1;
     margin: 0.8rem auto;
+    position: relative;
+
+    display : flex;
+    align-items: center;
+    justify-content: center;
+
+   & + textarea { 
+      resize: none;
+      padding: 1.6rem;
+      line-height: 28px;
+   } 
 
     border-radius: 0.8rem;
     background: rgba(250, 250,250, 0.4);
@@ -261,7 +287,6 @@ export const  TextArea = styled.textarea`
       margin: -7rem auto;
   
     }
-
 `;
 
 export const Description = styled.div`
@@ -271,13 +296,19 @@ export const Description = styled.div`
         margin-top: 15px;
         padding-top: 15px;
         border-top: 1px solid rgba(255, 255, 255, 0.13);
+        width: 100vw;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    } 
 
     p {
         font-size: 1rem;
         line-height: 18px;
         color: rgba(169,169,169, 0.9);
 
-        width: 50%;
+        width: 100%;
         text-align: center;
         margin: 0.9rem auto;
     }    
@@ -289,18 +320,8 @@ export const Description = styled.div`
     margin: 0.9rem auto;
 
  &:hover {
-     background: rgba(5, 5, 5, 0.9);
      transition: delay 0.2s;
  }
-}
-`;
-
-export const OpenClose = styled.button`
-
-    background: none;
-    border: 0;
-    position: relative;
-
 `;
 
 export const GroupButtons = styled.ul`
@@ -310,24 +331,30 @@ export const GroupButtons = styled.ul`
     align-items: center;
     justify-content: center;
 
+    & + ul {
+    width: 100vw;
+    flex: 1;
+    flex-wrap: wrap;
     position: relative;
-
+  }
 `;
 
 export const Button = styled.li`
 
+   margin-left: 0.8rem;
+   margin-top: 0.8rem;
+
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     
-    margin-left: 2rem;
-    width: 10rem;
-    height: 2rem;
+    width: 15vw;
+    height: 5vh;
 
     background: purple;
     color: rgba(169, 169, 169, 0.9);
-    font-size: 1rem;
+    font-size: calc(100vw *  1rem);
 
     border-radius: 0.5rem;
     cursor: pointer;

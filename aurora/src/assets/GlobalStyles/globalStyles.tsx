@@ -12,6 +12,10 @@ export default createGlobalStyle`
     text-rendering: optimizeLegibility !important;
 }
 
+html, body, #root {
+  min-height: 100vh;
+}
+
 body {
     color: #fff;
     background: #ebf2f5;
@@ -26,7 +30,7 @@ a:link {
 }
 
 li {
-    list-styled: none;
+    list-style: none;
 }
 
 body, input, button, textarea {

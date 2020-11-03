@@ -56,6 +56,7 @@ export const Badge = styled.button`
     background: none;
     border: 0;
     position: relative;
+    outline: none;
 
     ${(props: { hasUnread: boolean }) =>
 		props.hasUnread &&
