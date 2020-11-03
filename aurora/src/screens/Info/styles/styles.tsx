@@ -74,13 +74,11 @@ textarea {
       }
 
     img {
-        width: 10vw;
+        width: auto;
         height: auto;
 
         border-radius: 50%;
-      
-        border-radius: 1rem;
-        margin: 1.5rem auto;
+        margin: 0 auto;
         position: relative;
 
         display: flex;
@@ -105,21 +103,7 @@ textarea {
           width: 100%;
           text-align: center;
           padding: 0 10rem;
-        }
-
-        img {
-          width: 10vw;
-          height: auto;
-
-          border-radius: 50%;
-          margin: 0 auto;
-          top: 1rem;
-          position: relative;
-
-          display: flex;
-          flex-direction: column;
-          justify-self: center;
-        }
+      }
     }
 
       .indicator-active-or-close {
@@ -221,7 +205,8 @@ export const ButtonBody = styled.button`
     align-items: center;
     justify-content: center;
 
-    margin: 1rem auto;
+    margin: 0.5rem auto;
+    bottom: 0;
 
     outline: none;
 
@@ -257,7 +242,7 @@ export const  TextArea = styled.textarea`
     width: 30vw;
     min-height: 7rem;
     flex: 1;
-    margin: 0.8rem auto;
+    margin: 0.5rem auto;
     position: relative;
 
     display : flex;
@@ -342,7 +327,7 @@ export const GroupButtons = styled.ul`
 export const Button = styled.li`
 
    margin-left: 0.8rem;
-   margin-top: 0.8rem;
+   margin-top: 0.4rem;
 
     display: flex;
     flex-direction: row;
@@ -350,7 +335,7 @@ export const Button = styled.li`
     justify-content: center;
     
     width: 15vw;
-    height: 5vh;
+    height: 4vh;
 
     background: purple;
     color: rgba(169, 169, 169, 0.9);

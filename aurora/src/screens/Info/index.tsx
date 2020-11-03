@@ -3,6 +3,7 @@ import { FaCircle } from 'react-icons/fa';
 import { FiMaximize2, FiMinimize2 } from 'react-icons/fi';
 import Dock from '../../components/Dock';
 import Wallpaper from './wallpaper/styles';
+import imgInfo from '../../assets/logo.svg';
 
 import {
   Container,
@@ -17,8 +18,6 @@ import {
   from './styles/styles';
 
 export default function Info() {
-
-  const imgInfo = "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80";
 
   function Feedback() {
 
