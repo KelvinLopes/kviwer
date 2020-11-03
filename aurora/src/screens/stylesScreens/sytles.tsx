@@ -189,12 +189,17 @@ export const DescriptionToPage = styled.article`
     margin-bottom: 5rem;
    transition: width 2s , height  4s;
   
-
     position: relative;
 
     text-align: left;
     z-index: 1;
     border-radius: 0.8rem;
+
+    & + span {
+      width: 100vw;
+      max-width: 100vw;
+      height: 2vh;
+    }
 
     p {
         font-size: calc(1rem + 2vmin);
@@ -229,6 +234,9 @@ export const DescriptionToPage = styled.article`
             color: purple;
         }
 
+        span {
+          min-height: 6vh;
+        }
     }
 `;
 

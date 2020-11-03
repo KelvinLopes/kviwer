@@ -1,8 +1,8 @@
 import React from 'react';
 import Dock from '../../components/Dock';
+import Wallpaper from './wallpaper/styles';
 
 import {
-     BackgroundImg, 
      Container, 
      Header, 
      FirstImg, 
@@ -13,8 +13,6 @@ import {
     } from '../stylesScreens/sytles'; 
 
 import { FaCircle, FaArrowCircleDown } from 'react-icons/fa';
-
-import wallpaper from '../../assets/wallpapers/Aurora_Boreal_wallpaper.jpg';
 
 export default function HomeScreen() {
 
@@ -54,9 +52,9 @@ export default function HomeScreen() {
 
     return (
         <>
+          <Wallpaper />
             <Container>
                 <Dock />
-                <BackgroundImg src = {wallpaper} alt="wallpaper"  object-fit="cover"/>
                 <Header>
                     <FaCircle 
                         className="show-hidden-post"

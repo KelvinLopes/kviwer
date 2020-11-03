@@ -55,7 +55,6 @@ export default function DockBar() {
                 </Icons>
 
                  <Icons>
-                    <Link to="/">
                         <MdSearch 
                             className="circle-icon"
                             color="rgba(141, 144, 215, 1)"
@@ -63,7 +62,6 @@ export default function DockBar() {
                             title="Home"
                             onClick={ShowHidennInput}
                         />
-                    </Link>
                 </Icons>
 
                 <Icons>

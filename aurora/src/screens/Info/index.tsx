@@ -2,6 +2,7 @@ import React  from 'react';
 import { FaCircle } from 'react-icons/fa';
 import { FiMaximize2, FiMinimize2 } from 'react-icons/fi';
 import Dock from '../../components/Dock';
+import Wallpaper from './wallpaper/styles';
 
 import {
   Container,
@@ -140,79 +141,81 @@ export default function Info() {
     }
 
   return (
-    <Container>
-      <Dock />
-      <GroupElementsInfo
-        className="group-elements"
-      >
-        <div className="buttons-div">
-          <FaCircle
-            className="indicator-active-or-close"
-            size={30}
-            title='Fechar'
-          />
+  <>
+      <Wallpaper />
+      <Container>
+        <Dock />
+        <GroupElementsInfo
+          className="group-elements"
+        >
+          <div className="buttons-div">
+            <FaCircle
+              className="indicator-active-or-close"
+              size={30}
+              title='Fechar'
+            />
 
-         <span className="space-to-final-button"> </span>
+          <span className="space-to-final-button"> </span>
 
-          <FiMaximize2
-            className="indicator-resize maximize"
-            size={25}
-            onClick={resizeScreenMaxButton}
-            color="rgba(124, 0, 128, 1)"
-            title="Maximizar"
-          />
+            <FiMaximize2
+              className="indicator-resize maximize"
+              size={25}
+              onClick={resizeScreenMaxButton}
+              color="rgba(124, 0, 128, 1)"
+              title="Maximizar"
+            />
 
-          <FiMinimize2
-            className="indicator-resize minimize"
-            size={25}
-            onClick={resizeScreenMinButton}
-            color="rgba(124, 0, 128, 1)"
-            title="Restaurar"
-          />
+            <FiMinimize2
+              className="indicator-resize minimize"
+              size={25}
+              onClick={resizeScreenMinButton}
+              color="rgba(124, 0, 128, 1)"
+              title="Restaurar"
+            />
 
-        </div>
-
-        <GroupButtons>
-          <Button className="text-button button-about" onClick={About}>Sobre</Button>
-          <Button className="text-button button-feedback" onClick={Feedback}>Feedback</Button>
-          <Button className="text-button button-help" onClick={Help}>Ajuda</Button>
-        </GroupButtons>
-
-        <Description>
-          <img
-            className="img"
-            src={imgInfo}
-            alt="Info img"
-            draggable={false}
-          />
-          <div className="div-about">
-            <h2 className="title-info">Aurora</h2>
-            <p>Versão Alfa</p>
-            <p>Em desenvolvimento com ReactJS e outras tecnologias</p>
           </div>
 
-          <div className="div-feedback">
-            <p>
-              Viu alguma coisa errada,
-              layout querbrado, sugestões
-              elogios, aqui é o lugar certo!
-              Envie seu feedback.
-            </p>
-            <TextArea />
-            <ButtonBody>
-              <TextButtonAboutSubmit>
-                Enviar
-                </TextButtonAboutSubmit>
-            </ButtonBody>
-          </div>
+          <GroupButtons>
+            <Button className="text-button button-about" onClick={About}>Sobre</Button>
+            <Button className="text-button button-feedback" onClick={Feedback}>Feedback</Button>
+            <Button className="text-button button-help" onClick={Help}>Ajuda</Button>
+          </GroupButtons>
 
-          <div className="div-help">
-            <h3>Aprenda a usar</h3>
-            <p>Em breve mais novidades aqui</p>
-          </div>
-        </Description>
-      </GroupElementsInfo>
-    </Container>
+          <Description>
+            <img
+              className="img"
+              src={imgInfo}
+              alt="Info img"
+              draggable={false}
+            />
+            <div className="div-about">
+              <h2 className="title-info">Aurora</h2>
+              <p>Versão Alfa</p>
+              <p>Em desenvolvimento com ReactJS e outras tecnologias</p>
+            </div>
 
-  );
+            <div className="div-feedback">
+              <p>
+                Viu alguma coisa errada,
+                layout querbrado, sugestões
+                elogios, aqui é o lugar certo!
+                Envie seu feedback.
+              </p>
+              <TextArea />
+              <ButtonBody>
+                <TextButtonAboutSubmit>
+                  Enviar
+                  </TextButtonAboutSubmit>
+              </ButtonBody>
+            </div>
+
+            <div className="div-help">
+              <h3>Aprenda a usar</h3>
+              <p>Em breve mais novidades aqui</p>
+            </div>
+          </Description>
+        </GroupElementsInfo>
+      </Container>
+    </>  
+    );
 }

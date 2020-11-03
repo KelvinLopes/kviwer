@@ -1,8 +1,8 @@
 import React from 'react';
 import Dock from '../../components/Dock';
+import Wallpaper from './wallpaper/styles';
 
 import {
-     BackgroundImg, 
      Container, 
      Header, 
      FirstImg, 
@@ -13,8 +13,6 @@ import {
     } from '../stylesScreens/sytles'; 
 
 import { FaCircle, FaArrowCircleDown } from 'react-icons/fa';
-
-import wallpaper from '../../assets/wallpapers/Aurora_Boreal_wallpaper.jpg';
 
 export default function PostScreen() {
 
@@ -55,9 +53,9 @@ export default function PostScreen() {
 
     return (
         <>
+          <Wallpaper />
             <Container>
                 <Dock />
-                <BackgroundImg src = {wallpaper} alt="wallpaper"  object-fit="cover"/>
                 <Header>
                     <FaCircle 
                         className="show-hidden-post"
@@ -89,6 +87,9 @@ export default function PostScreen() {
                             🤍
                         </p>
                     </DescriptionToPage>
+
+                    <span></span>
+
                 </GroupElements>
 
             </Container>

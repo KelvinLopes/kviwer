@@ -147,7 +147,7 @@ export const GroupElementsInfo = styled.div`
     background: rgba(250, 250, 250, 0.9);
     border-radius: 0.8rem;
     padding: 15px 5px;
-  transition: background-color 0.5s;
+  transition: background-color 4s;
 
 & + div {
     width: 100vw;
@@ -161,7 +161,7 @@ export const GroupElementsInfo = styled.div`
 
     &:hover {
         background: rgba(5, 5, 5, 1);
-        transition: delay 0.5s;
+        transition: background-color  5s;
         z-index: 10;
 
         .indicator-active-or-close {
@@ -209,8 +209,8 @@ export const GroupElementsInfo = styled.div`
 `;
 export const ButtonBody = styled.button`
 
-    width: 180px;
-    height: 64px;
+    width: 18vw;
+    height: 6vh;
 
     background: rgba(250, 174, 190, 0.5);
     border: solid 1px pink;

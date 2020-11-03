@@ -12,6 +12,7 @@ export const Dock = styled.aside`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: background-color 2s;
 
     top: 0;
     bottom: auto;
@@ -22,8 +23,9 @@ export const Dock = styled.aside`
 
     &:hover {
         height: 25vh;
-        background: rgba(235, 242, 245, 0.9);
-        transition: background-color 0.3s;
+        //background: rgba(235, 242, 245, 1);
+        background: rgba(5, 5, 5, 0.9);
+        transition: background-color 2s;
         .circle-icon {
             z-index: 5;
         }
@@ -83,7 +85,7 @@ export const Input = styled.input`
     height: 10vh;
 
     text-align: center;
-    color: rgba(169, 169, 169, 1);
+    color: rgba(167, 167, 167, 1);
     font-weight: bold;
     font-size: 1rem;
     font-style: normal;
@@ -94,7 +96,7 @@ export const Input = styled.input`
     &:hover {
       border: 3px solid purple;
       background: rgba(5, 5, 5, 1);
-      color: rgba(250, 250, 250, 1);
+      color: rgba(196, 161, 41, 1);
     }
 
     & ::before {
