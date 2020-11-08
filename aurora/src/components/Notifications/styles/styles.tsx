@@ -11,43 +11,43 @@ export const Container = styled.div`
         font-size: 1rem;
 
         display: flex;
-        flex-direction: row;
+        flex-direction: row  !important;
         justify-content: center;
-        position: relative;
+        position: relative  !important;
 
         left: 0.8rem;
-        top: 1rem;
+        top: 1rem ;
     }
 
     img {
-        width: 28vw;
-        height: 60vh;
-        object-fit: cover;
-        border-radius: 1rem;
+        width: 28vw  !important;
+        height: 20vh  !important;
+        object-fit: cover ;
+        border-radius: 1rem !important;
         margin: 1.5rem auto;
-        position: relative;
+        position: relative  !important;
 
         display: flex;
-        flex-direction: column;
+        flex-direction: column  !important;
         justify-content: center;
     }
 
-    .indicator-active-or-close {
+    .indicator-active-or-close  {
         color: purple;
 
         display: flex;
-        flex-direction: row;
+        flex-direction: row  !important;
         justify-content: center;
 
-        position: relative;
-        left: calc(50% - 14rem);
+        position: relative  !important;
+        left: calc(50% - 14rem)  !important;
     }
 
     .indicator-active-or-close:hover {
         color: red;
     }
 
-    position: relative;
+    position: relative  !important;
 
 `;
 
@@ -55,14 +55,14 @@ export const Badge = styled.button`
 
     background: none;
     border: 0;
-    position: relative;
+    position: relative  !important;
     outline: none;
 
     ${(props: { hasUnread: boolean }) =>
 		props.hasUnread &&
 		css`
             &::after {
-                position: absolute;
+                position: absolute  !important;
                 right: 0;
                 top: 0;
                 width: 8px;
@@ -77,20 +77,21 @@ export const Badge = styled.button`
 
 export const NotificationsList = styled.div`
 
-    position: absolute;
-    width: 25rem;
-    height: 70vh;
-    left: calc(50% - 130px);
-    top: calc(100% + 20px);
+    position: absolute  !important;
+    width: 25rem  !important;
+    height: 70vh  !important;
+    flex: 1  !important;
+    left: calc(50% - 130px)  !important;
+    top: calc(100% + 20px)  !important;
     background: rgba(250, 250, 250, 0.9);
-    border-radius: 0.8rem;
+    border-radius: 0.8rem  !important;
     display:  ${(props: { visible: boolean }) => (props.visible ? 'block' : 'none')};
 
     &::before {
         content: '';
-        position: absolute;
+        position: absolute  !important;
         left: calc(50% - 5.7rem);
-        top: -20px;
+        top: -20px  !important;
         width: 0;
         height: 0;
         border-left: 20px solid transparent;
@@ -133,7 +134,7 @@ export const Notification = styled.div`
         color: ${lighten(0.2, 'purple')};
     }
 
-    ${(props: { unread: boolean }) =>
+  /*  ${(props: { unread: boolean }) =>
 		props.unread &&
 		css`
             &::after {
@@ -145,6 +146,6 @@ export const Notification = styled.div`
                 border-radius: 50%;
                 margin-left: 10px;
             }
-        `}
+        `}*/
 	}
 `;
