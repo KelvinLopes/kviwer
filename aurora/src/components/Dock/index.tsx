@@ -59,7 +59,7 @@ export default function DockBar() {
                             className="circle-icon"
                             color="rgba(141, 144, 215, 1)"
                             size="5rem"
-                            title="Home"
+                            title="Pesquisar"
                             onClick={ShowHidennInput}
                         />
                 </Icons>
@@ -70,7 +70,7 @@ export default function DockBar() {
                             className="circle-icon"
                             color="rgba(141, 144, 215, 1)"
                             size="5rem"
-                            title="Home"
+                            title="Info"
                             onClick={ShowHidennInput}
                         />
                         </Link>

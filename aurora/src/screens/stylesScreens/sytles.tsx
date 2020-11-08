@@ -204,7 +204,7 @@ export const DescriptionToPage = styled.article`
     p {
         font-size: calc(1rem + 2vmin);
         color: rgba(169, 169, 169, 0.9);
-        width: 50%;
+        width: 50% ;
         padding-top: 2rem;
         padding-bottom: 2rem;
     }
@@ -251,8 +251,9 @@ export const ImgToDescription = styled.img`
 
     margin: 1rem auto;
     bottom: 0.8rem;
-    left: -5rem;
-
+   // left: -5rem;
+   /**Position center image experimental */
+    left: calc(50vw - 58vw);
     position: relative;
 
     &:hover {
