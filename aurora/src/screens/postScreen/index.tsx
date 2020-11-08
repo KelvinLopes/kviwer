@@ -88,6 +88,25 @@ export default function PostScreen() {
                         </p>
                     </DescriptionToPage>
 
+                     <DescriptionToPage className="hover-post">
+                        <HeaderToDescriptionToPage>
+                            <h1> <FaCircle size={25} className="indicator-active-or-disable" /> Aurora Alfa version</h1>
+                        </HeaderToDescriptionToPage>
+                        <p>
+                            <ImgToDescription className="img-description-zero-left" src={img} alt="Dev Aurora" />
+                           Seja na web ou não, acredito que sites e sistemas podem e devem sempre inovar e evoluir em outros
+                           pontos além dos tradicionais que vejo ultimamente.
+                           Pensando nisso comecei a trabalhar nessa interface e quem sabe extende lá além da web.
+                        </p>
+                        <p>
+                            <ImgToDescription className="img-description-zero-left" src={imgTwo} alt="Dev Aurora" />
+                            Trazer recursos interessantes é uma missão e tanto, mas quero fazer isso e continuar a crescer os
+                            planos. Tudo está muito novo e pequeno ainda, mas tenho certeza que se tornará em algo incrivél!
+                            Prepare se para ver algo incrivél aqui!
+                            🤍
+                        </p>
+                    </DescriptionToPage>
+
                     <span></span>
 
                 </GroupElements>

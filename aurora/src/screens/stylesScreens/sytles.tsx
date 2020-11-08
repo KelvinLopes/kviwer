@@ -216,7 +216,7 @@ export const DescriptionToPage = styled.article`
         margin-bottom: auto;
         transition: background-color  2s;
        transition: width 4s , height  2s;
-        flex: 1;
+      flex: 1;
 
         background: rgba(5, 5, 5, 1);
         border-radius: 0.8rem 0.8rem 0 0;
