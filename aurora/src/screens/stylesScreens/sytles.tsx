@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Container = styled.div`
 
  .read-post {
-        display: none;
-        transition: background 0.2s;
+    display: none;
+    transition: background 0.2s;
     }
 
     width: 100vw;
