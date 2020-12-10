@@ -211,7 +211,7 @@ export const DescriptionToPage = styled.article`
 
     &:hover {
         width: 100vw;
-        height: 210vh;
+        min-height: 210vh;
         margin-top: auto;
         margin-bottom: auto;
         transition: background-color  2s;
