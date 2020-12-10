@@ -335,4 +335,8 @@ export const Card = styled.div`
       font-size: 18px;
     }
 
+    &:hover {
+      border: 3px solid purple;
+      background: rgba(5, 5, 5, 1);
+    }
 `;
