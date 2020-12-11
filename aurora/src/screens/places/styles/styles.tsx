@@ -125,7 +125,7 @@ export const GroupElementsPlace= styled.div`
     position: absolute;
     width: 45vw;
     max-width: 100vw;
-    top: calc(100% + 7rem);
+    top: calc(100% + 10rem);
     left: calc( 50vw / 2 );
     margin:  0 auto;
     background: rgba(250, 250, 250, 1);
