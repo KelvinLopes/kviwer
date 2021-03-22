@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 
+
+
+
  .read-post {
     display: none;
     transition: background 0.2s;
@@ -18,7 +21,9 @@ export const Container = styled.div`
     margin-top: 0;
     top: 0;
 
-    position: relative;
+    position: fixed;
+    z-index: 1;
+    overflow-y: hidden;
 
 `;
 
@@ -133,10 +138,13 @@ export const GroupElements = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+  
+    z-index: 5;
 
     width: 100vw;
-    margin-top: 20rem;
-
+    min-height: 100vh;
+    margin-top: 8rem;
 `;
 
 export const HeaderToDescriptionToPage = styled.header`
@@ -145,6 +153,7 @@ export const HeaderToDescriptionToPage = styled.header`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 
     width: 100%;
 
@@ -178,6 +187,7 @@ export const HeaderToDescriptionToPage = styled.header`
 
 `;
 
+
 export const DescriptionToPage = styled.article`
 
     display: flex;
@@ -185,14 +195,14 @@ export const DescriptionToPage = styled.article`
     align-items: center;
     width: 60vw;
     height: auto;
-    background: rgba(250, 250, 250, 0.5);
+    background: rgba(250, 250, 250, 0.8);
     margin-bottom: 5rem;
    transition: width 2s , height  4s;
   
     position: relative;
 
     text-align: left;
-    z-index: 1;
+    z-index: 2;
     border-radius: 0.8rem;
 
     & + span {
@@ -212,18 +222,31 @@ export const DescriptionToPage = styled.article`
     &:hover {
         width: 100vw;
         min-height: 210vh;
+        top: 0;
         margin-top: auto;
         margin-bottom: auto;
         transition: background-color  2s;
-       transition: width 4s , height  2s;
-      flex: 1;
+        transition: width 4s , height  2s;
+        flex: 1;
 
         background: rgba(5, 5, 5, 1);
         border-radius: 0.8rem 0.8rem 0 0;
         z-index: 5;
+       
 
         h1 {
             color: purple;
+        }
+
+        .board-scroll {
+          z-index: 15;
+        }
+
+        .read-post {
+          z-index: 15;
+          height: 100vh;
+          overflow-y: auto;
+
         }
 
         .img-description-zero-left {

@@ -1,5 +1,6 @@
 import React from 'react';
 import Dock from '../../components/Dock';
+import BoardScroll from '../../components/BoardScroll';
 import Wallpaper from './wallpaper/styles';
 
 import {
@@ -27,13 +28,13 @@ export default function HomeScreen() {
 
         if(readPost.style.display === 'none') {
             readPost.style.display = 'flex';
-            messagePost.style.display = 'flex';
+            //messagePost.style.display = 'flex';
         }else {
             readPost.style.display = 'none';
-            messagePost.style.display = 'none';
+            //messagePost.style.display = 'none';
         }
-
-        if(hiddenShowPost.style.color === 'pink' ) {
+//Test
+      /*  if(hiddenShowPost.style.color === 'pink' ) {
             hiddenShowPost.style.color = 'green';
             messagePost.style.display = 'flex';
         }else {
@@ -48,14 +49,15 @@ export default function HomeScreen() {
             hiddenShowPost.style.color = 'green';
             messagePost.style.display = 'flex';
         }
+      */
     }
 
     return (
         <>
           <Wallpaper />
-            <Container>
+            <Container onDoubleClick={handleReadPost} >
                 <Dock />
-                <Header>
+                {/*<Header>
                     <FaCircle 
                         className="show-hidden-post"
                         color="pink"
@@ -66,8 +68,10 @@ export default function HomeScreen() {
                     <FirstImg src={img} alt="Aurora Boreal"/>
                     <FaArrowCircleDown className="message-post" size={40} />
                 </Header>
+                */}
 
                 <GroupElements className="read-post" > 
+                <BoardScroll>
                     <DescriptionToPage className="hover-post">
                         <HeaderToDescriptionToPage>
                             <h1> <FaCircle size={25} className="indicator-active-or-disable" /> Aurora</h1>
@@ -83,6 +87,7 @@ export default function HomeScreen() {
                             🤍
                         </p>
                     </DescriptionToPage>
+                    </BoardScroll>
                 </GroupElements>
 
             </Container>

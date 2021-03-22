@@ -4,6 +4,8 @@ import { Dock, GroupIcons, Icons, Input } from './styles/styles';
 import { MdSearch, MdHome, MdHeadsetMic, MdBook, MdInfo, MdPlace } from 'react-icons/md';
 import Notifications from './../Notifications';
 
+
+
 export default function DockBar() {
 
     function ShowHidennInput() {
