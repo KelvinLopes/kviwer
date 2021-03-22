@@ -6,8 +6,6 @@ import { MdPlace } from 'react-icons/md';
 
 import {
   Container,
-  Header,
-  FirstImg,
   GroupElements,
   HeaderToDescriptionToPage,
   DescriptionToPage,

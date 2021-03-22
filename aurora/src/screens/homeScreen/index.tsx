@@ -5,8 +5,6 @@ import Wallpaper from './wallpaper/styles';
 
 import {
      Container, 
-     Header, 
-     FirstImg, 
      GroupElements,
      HeaderToDescriptionToPage,
      DescriptionToPage, 
