@@ -11,7 +11,6 @@ export const Container = styled.div`
     }
 
     width: 100vw;
-    min-height: 100vh;
 
     display: flex;
     flex-direction: column;
@@ -145,6 +144,11 @@ export const GroupElements = styled.section`
     width: 100vw;
     min-height: 100vh;
     margin-top: 8rem;
+
+    &:hover {
+        height: 100%;
+    }
+
 `;
 
 export const HeaderToDescriptionToPage = styled.header`
@@ -260,6 +264,7 @@ export const DescriptionToPage = styled.article`
         span {
           min-height: 6vh;
         }
+
     }
 `;
 
