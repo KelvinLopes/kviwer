@@ -202,7 +202,7 @@ export const DescriptionToPage = styled.article`
     height: auto;
     background: rgba(250, 250, 250, 0.8);
     margin-bottom: 5rem;
-   transition: width 2s , height  4s;
+    transition: width 2s , height  4s;
   
     position: relative;
 
@@ -228,6 +228,7 @@ export const DescriptionToPage = styled.article`
         width: 100vw;
         min-height: auto;
         top: 0;
+        bottom: 50%auto;
         margin-top: auto;
         margin-bottom: auto;
         padding: 10% 0 25% 0;

@@ -23,6 +23,7 @@ export const Dock = styled.aside`
 
     &:hover {
         height: 25vh;
+        z-index: 6;
         //background: rgba(235, 242, 245, 1);
         background: rgba(5, 5, 5, 0.9);
         transition: background-color 2s;
