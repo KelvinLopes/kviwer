@@ -8,7 +8,9 @@ import {
      GroupElements,
      HeaderToDescriptionToPage,
      DescriptionToPage, 
-     ImgToDescription 
+     ImgToDescription,
+     Header,
+     FirstImg 
     } from '../stylesScreens/sytles'; 
 
 import { FaCircle, FaArrowCircleDown } from 'react-icons/fa';
@@ -26,13 +28,13 @@ export default function HomeScreen() {
 
         if(readPost.style.display === 'none') {
             readPost.style.display = 'flex';
-            //messagePost.style.display = 'flex';
+            messagePost.style.display = 'flex';
         }else {
             readPost.style.display = 'none';
-            //messagePost.style.display = 'none';
+            messagePost.style.display = 'none';
         }
 //Test
-      /*  if(hiddenShowPost.style.color === 'pink' ) {
+        if(hiddenShowPost.style.color === 'pink' ) {
             hiddenShowPost.style.color = 'green';
             messagePost.style.display = 'flex';
         }else {
@@ -47,7 +49,7 @@ export default function HomeScreen() {
             hiddenShowPost.style.color = 'green';
             messagePost.style.display = 'flex';
         }
-      */
+      
     }
 
     return (
@@ -55,7 +57,7 @@ export default function HomeScreen() {
           <Wallpaper />
             <Container onDoubleClick={handleReadPost} >
                 <Dock />
-                {/*<Header>
+                <Header>
                     <FaCircle 
                         className="show-hidden-post"
                         color="pink"
@@ -63,10 +65,10 @@ export default function HomeScreen() {
                         title="Mostrar/ocultar posts"
                         onClick={handleReadPost}
                     />
-                    <FirstImg src={img} alt="Aurora Boreal"/>
+                   <FirstImg src={img} alt="Aurora Boreal"/>
                     <FaArrowCircleDown className="message-post" size={40} />
                 </Header>
-                */}
+            
 
                 <GroupElements className="read-post" > 
                 <BoardScroll>

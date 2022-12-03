@@ -11,6 +11,7 @@ export const Container = styled.div`
     }
 
     width: 100vw;
+    min-height: auto;
 
     display: flex;
     flex-direction: column;
@@ -142,11 +143,11 @@ export const GroupElements = styled.section`
     z-index: 5;
 
     width: 100vw;
-    min-height: 100vh;
+    min-height: auto;
     margin-top: 8rem;
 
     &:hover {
-        height: 100%;
+        height: 100vh;
     }
 
 `;
@@ -225,13 +226,15 @@ export const DescriptionToPage = styled.article`
 
     &:hover {
         width: 100vw;
-        min-height: 210vh;
+        min-height: auto;
         top: 0;
         margin-top: auto;
         margin-bottom: auto;
+        padding: 10% 0 25% 0;
         transition: background-color  2s;
         transition: width 4s , height  2s;
-        flex: 1;
+        flex-grow: auto;
+        flex-direction: column;
 
         background: rgba(5, 5, 5, 1);
         border-radius: 0.8rem 0.8rem 0 0;

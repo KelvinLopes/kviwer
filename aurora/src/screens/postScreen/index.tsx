@@ -9,7 +9,9 @@ import {
   GroupElements,
   HeaderToDescriptionToPage,
   DescriptionToPage,
-  ImgToDescription
+  ImgToDescription,
+  Header,
+  FirstImg
 } from '../stylesScreens/sytles';
 
 import { FaCircle, FaArrowCircleDown } from 'react-icons/fa';
@@ -45,7 +47,7 @@ export default function PostScreen() {
 
       <Container onDoubleClick={handleReadPost} >
         <Dock />
-        {/*<Header>
+        <Header>
                     <FaCircle 
                         className="show-hidden-post"
                         color="pink"
@@ -55,7 +57,7 @@ export default function PostScreen() {
                     />
                     <FirstImg src={imgThree} alt="Aurora Boreal"/>
                     <FaArrowCircleDown className="message-post" size={40} />
-                </Header>*/}
+                </Header>
 
         <GroupElements className="read-post" >
           <BoardScroll className="board-scroll">
@@ -99,14 +101,22 @@ export default function PostScreen() {
                            Seja na web ou não, acredito que sites e sistemas podem e devem sempre inovar e evoluir em outros
                            pontos além dos tradicionais que vejo ultimamente.
                            Pensando nisso comecei a trabalhar nessa interface e quem sabe extende lá além da web.
-                        </p>
+                </p>
+
+                <p>
+                  <ImgToDescription className="img-description-zero-left" src={img} alt="Dev Aurora" />
+                           Seja na web ou não, acredito que sites e sistemas podem e devem sempre inovar e evoluir em outros
+                           pontos além dos tradicionais que vejo ultimamente.
+                           Pensando nisso comecei a trabalhar nessa interface e quem sabe extende lá além da web.
+                </p>
+                
                 <p>
                   <ImgToDescription className="img-description-zero-left" src={imgTwo} alt="Dev Aurora" />
                             Trazer recursos interessantes é uma missão e tanto, mas quero fazer isso e continuar a crescer os
                             planos. Tudo está muito novo e pequeno ainda, mas tenho certeza que se tornará em algo incrivél!
                             Prepare se para ver algo incrivél aqui!
                             🤍
-                        </p>
+                </p>
 
             </DescriptionToPage>
             <span></span>
