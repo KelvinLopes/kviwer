@@ -9,56 +9,34 @@ import {
   GroupElements,
   HeaderToDescriptionToPage,
   DescriptionToPage,
-  ImgToDescription,
-  Header,
-  FirstImg
+  ImgToDescription
 } from '../stylesScreens/sytles';
 
-import { FaCircle, FaArrowCircleDown } from 'react-icons/fa';
+import { FaCircle } from 'react-icons/fa';
 
 export default function PostScreen() {
 
   const img = 'https://images.unsplash.com/photo-1565843708714-52ecf69ab81f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80';
   const imgTwo = 'https://images.unsplash.com/photo-1508739826987-b79cd8b7da12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80';
-  const imgThree = 'https://images.unsplash.com/photo-1589561253898-768105ca91a8?ixlib=rb-1.2.1&auto=format&fit=crop&w=749&q=80';
   const imgFoul = 'https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_1280.png';
 
-  function handleReadPost() {
+  function handleDoubleTouchInDockToReadPost() {
 
     const readPost = document.querySelector('.read-post') as HTMLElement;
-    const hiddenShowPost = document.querySelector('.show-hidden-post') as HTMLElement;
-    const messagePost = document.querySelector('.message-post') as HTMLElement;
-
 
     if (readPost.style.display === 'none') {
       readPost.style.display = 'flex';
-      // messagePost.style.display = 'flex';
     } else {
       readPost.style.display = 'none';
-      //messagePost.style.display = 'none';
     }
-
-
   }
 
   return (
     <>
       <Wallpaper />
 
-      <Container onDoubleClick={handleReadPost} >
+      <Container onDoubleClick={handleDoubleTouchInDockToReadPost} >
         <Dock />
-        <Header>
-                    <FaCircle 
-                        className="show-hidden-post"
-                        color="pink"
-                        size={70}
-                        title="Mostrar/ocultar posts"
-                        onDoubleClick={handleReadPost}
-                    />
-                    <FirstImg src={imgThree} alt="Aurora Boreal"/>
-                    <FaArrowCircleDown className="message-post" size={40} />
-                </Header>
-
         <GroupElements className="read-post" >
           <BoardScroll className="board-scroll">
              
@@ -78,7 +56,7 @@ export default function PostScreen() {
                 <p>
                   Iniciando o desenvolvimento do Aurora Places, um serviço onde pessoas ou empresas poderão
                   encontrar negócios e prestadores de serviços de uma forma bem prática.
-                          <ImgToDescription className="img-description-zero-left" src={imgFoul} alt="Dev Aurora" />
+                  <ImgToDescription className="img-description-zero-left" src={imgFoul} alt="Dev Aurora" />
                 </p>
 
                 <p>
@@ -88,7 +66,6 @@ export default function PostScreen() {
 
             </DescriptionToPage>
               
-
 
             <DescriptionToPage className="hover-post">
 
