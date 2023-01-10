@@ -5,12 +5,12 @@ import Wallpaper from './wallpaper/styles';
 
 import {
      Container, 
-     GroupElements,
-     HeaderToDescriptionToPage,
-     DescriptionToPage, 
-     ImgToDescription,
-     Header,
-     FirstImg 
+     //GroupElements,
+     //HeaderToDescriptionToPage,
+     //DescriptionToPage, 
+     //ImgToDescription,
+     //Header,
+     //FirstImg 
     } from '../stylesScreens/sytles'; 
 
 import { FaCircle, FaArrowCircleDown } from 'react-icons/fa';
@@ -33,7 +33,7 @@ export default function HomeScreen() {
 
     return (
         <>
-          <Wallpaper />
+          {/*<Wallpaper />
             <Container onDoubleClick={handleDoubleTouchInDockToReadPost} >
                 <Dock />
                 <GroupElements className="read-post" > 
@@ -55,9 +55,8 @@ export default function HomeScreen() {
                     </DescriptionToPage>
                     </BoardScroll>
                 </GroupElements>
-
             </Container>
-
+    */}
         </>
     );
 }

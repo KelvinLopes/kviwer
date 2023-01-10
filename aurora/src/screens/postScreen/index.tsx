@@ -6,18 +6,19 @@ import { MdPlace } from 'react-icons/md';
 
 import {
   Container,
-  GroupElements,
-  HeaderToDescriptionToPage,
-  DescriptionToPage,
-  ImgToDescription
+  CardGroups,
+  Card,
+  HeaderCard,
+  ImageCard,
+  CardTitle
 } from '../stylesScreens/sytles';
 
 import { FaCircle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export default function PostScreen() {
 
   const img = 'https://images.unsplash.com/photo-1565843708714-52ecf69ab81f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80';
-  const imgTwo = 'https://images.unsplash.com/photo-1508739826987-b79cd8b7da12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80';
   const imgFoul = 'https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_1280.png';
 
   function handleDoubleTouchInDockToReadPost() {
@@ -34,78 +35,48 @@ export default function PostScreen() {
   return (
     <>
       <Wallpaper />
-
       <Container onDoubleClick={handleDoubleTouchInDockToReadPost} >
         <Dock />
-        <GroupElements className="read-post" >
+        <CardGroups className="read-post" >
           <BoardScroll className="board-scroll">
-             
-
-            <DescriptionToPage className="hover-post">
-              <HeaderToDescriptionToPage>
-                <h1> <FaCircle size={25} className="indicator-active-or-disable" /> Aurora Places</h1>
-              </HeaderToDescriptionToPage>
+            <Card className="hover-post">
+              <HeaderCard>
+                <CardTitle> 
+                  <FaCircle size={25} className="indicator-active-or-disable" /> 
+                  <Link to="/aurora_places">Aurora Places</Link>
+                </CardTitle>
+              </HeaderCard>
                 <MdPlace
                   className="circle-icon"
                   color="rgba(141, 144, 215, 1)"
                   size="7rem"
                   title="Places"
                 />
-
-
-                <p>
-                  Iniciando o desenvolvimento do Aurora Places, um serviço onde pessoas ou empresas poderão
-                  encontrar negócios e prestadores de serviços de uma forma bem prática.
-                  <ImgToDescription className="img-description-zero-left" src={imgFoul} alt="Dev Aurora" />
-                </p>
-
-                <p>
-                  Em breve novas funcionalidades e mais detalhes do web app Aurora Places.
-                </p>
-        
-
-            </DescriptionToPage>
+              <p>
+                <ImageCard className="img-description-zero-left" src={imgFoul} alt="Dev Aurora" />
+                Novidades chegando: conheça o Aurora Places.
+              </p>
+            </Card>
               
+          {/* Haverá atualização e novos styles componentes Card com map*/}
 
-            <DescriptionToPage className="hover-post">
-
-              <HeaderToDescriptionToPage>
-                <h1> <FaCircle size={25} className="indicator-active-or-disable" /> Aurora Alfa version</h1>
-              </HeaderToDescriptionToPage>
-
+            <Card className="hover-post">
+              <HeaderCard>
+                <CardTitle>
+                  <FaCircle size={25} className="indicator-active-or-disable" />
+                  <Link to="/aurora_alfa_version">Aurora Alfa version</Link>
+                </CardTitle>
+              </HeaderCard>
                 <p>
-                  <ImgToDescription className="img-description-zero-left" src={img} alt="Dev Aurora" />
-                           Seja na web ou não, acredito que sites e sistemas podem e devem sempre inovar e evoluir em outros
-                           pontos além dos tradicionais que vejo ultimamente.
-                           Pensando nisso comecei a trabalhar nessa interface e quem sabe extende lá além da web.
+                  <ImageCard className="img-description-zero-left" src={img} alt="Dev Aurora" />
+                  O ínicio de tudo, no Aurora OS, sistema próprio para meu projeto, meu blog VirtuakeoBlog.
+                  Nossa casa de serviços digitais, entertenimento do Brasil, muitas novidades estão para chegar.
+                  Leia mais clicando no título desse card.
                 </p>
-
-                <p>
-                  <ImgToDescription className="img-description-zero-left" src={img} alt="Dev Aurora" />
-                           Seja na web ou não, acredito que sites e sistemas podem e devem sempre inovar e evoluir em outros
-                           pontos além dos tradicionais que vejo ultimamente.
-                           Pensando nisso comecei a trabalhar nessa interface e quem sabe extende lá além da web.
-                </p>
-                
-                <p>
-                  <ImgToDescription className="img-description-zero-left" src={imgTwo} alt="Dev Aurora" />
-                            Trazer recursos interessantes é uma missão e tanto, mas quero fazer isso e continuar a crescer os
-                            planos. Tudo está muito novo e pequeno ainda, mas tenho certeza que se tornará em algo incrivél!
-                            Prepare se para ver algo incrivél aqui!
-                            🤍
-                </p>
-
-            </DescriptionToPage>
-            <span></span>
-           
-
+            </Card>
           </BoardScroll>
-
-        </GroupElements>
-
-
+        </CardGroups>
       </Container>
-
     </>
   );
 }
