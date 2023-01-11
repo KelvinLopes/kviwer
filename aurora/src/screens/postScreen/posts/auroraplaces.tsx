@@ -19,6 +19,7 @@ export default function PostScreen() {
 
 const imgFoul = 'https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_1280.png';
 
+//Basta dois toques ou dois cliques para exibir ou ocultar os posts, func chamada na Container
   function handleDoubleTouchInDockToReadPost() {
 
     const readPost = document.querySelector('.read-post') as HTMLElement;
@@ -30,6 +31,7 @@ const imgFoul = 'https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_1280
     }
   }
 
+  //Basta um toque ou um clique para aumentar em 100vw ou reduzir para 60vw os cards, fun chamada no DescriptionToPage
   function handleonClickToogleSize () {
     const toogleSize = document.querySelector('.hover-post') as HTMLElement;
   
@@ -55,7 +57,8 @@ const imgFoul = 'https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_1280
                     className="back_arrow_left" 
                     />
                   </Link> 
-                  Aurora Places</h1>
+                  Aurora Places
+                </h1>
               </HeaderToDescriptionToPage>
                 <MdPlace
                   className="circle-icon"

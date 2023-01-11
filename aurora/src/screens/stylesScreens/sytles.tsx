@@ -43,10 +43,6 @@ export const CardGroups = styled.section`
     min-height: auto;
     margin-top: 8rem;
 
-    &:hover {
-        height: 100vh;
-    }
-
 `;
 
 export const HeaderCard = styled.header`
@@ -107,12 +103,6 @@ export const Card = styled.article`
     z-index: 2;
     border-radius: 0.8rem;
 
-    & + span {
-      width: 100vw;
-      max-width: 100vw;
-      height: 2vh;
-    }
-
     p {
         font-size: calc(1rem + 2vmin);
         color: rgba(169, 169, 169, 0.9);
@@ -122,23 +112,15 @@ export const Card = styled.article`
     }
 
     &:hover {
-        //width: 100vw;
-        min-height: auto;
-        top: 0;
-        bottom: 50%auto;
-        margin-top: auto;
-        margin-bottom: auto;
+        
         padding: 10% 0 25% 0;
         transition: background-color  2s;
-        transition: width 4s , height  2s;
         flex-grow: auto;
         flex-direction: column;
 
         background: rgba(5, 5, 5, 1);
-        border-radius: 0.8rem 0.8rem 0 0;
-        z-index: 5;
+        border-radius: 0.8rem;
        
-
         .board-scroll {
           z-index: 15;
         }
@@ -150,16 +132,8 @@ export const Card = styled.article`
 
         }
 
-        .img-description-zero-left {
-            left: 0;
-        }
-
         .indicator-active-or-disable {
             color: purple;
-        }
-
-        span {
-          min-height: 6vh;
         }
 
         a {

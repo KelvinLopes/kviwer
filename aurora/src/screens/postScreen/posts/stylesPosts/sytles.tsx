@@ -203,12 +203,6 @@ export const DescriptionToPage = styled.article`
     z-index: 2;
     border-radius: 0.8rem;
 
-    & + span {
-      width: 100vw;
-      max-width: 100vw;
-      height: 2vh;
-    }
-
     p {
         font-size: calc(1rem + 2vmin);
         color: rgba(169, 169, 169, 0.9);
@@ -218,7 +212,7 @@ export const DescriptionToPage = styled.article`
     }
 
     &:hover {
-        //width: 100vw;
+        
         min-height: auto;
         top: 0;
         bottom: 50%auto;
@@ -261,11 +255,6 @@ export const DescriptionToPage = styled.article`
         .back_arrow_left {
             color: purple;
         }
-
-        span {
-          min-height: 6vh;
-        }
-
     }
 `;
 

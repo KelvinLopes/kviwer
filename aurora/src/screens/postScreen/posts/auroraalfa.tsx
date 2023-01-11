@@ -11,13 +11,16 @@ import {
   ImgToDescription
 } from '../posts/stylesPosts/sytles';
 
-import { FaCircle } from 'react-icons/fa';
+import { FaArrowAltCircleLeft } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
 
 export default function PostScreen() {
 
   const img = 'https://images.unsplash.com/photo-1565843708714-52ecf69ab81f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80';
   const imgTwo = 'https://images.unsplash.com/photo-1508739826987-b79cd8b7da12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80';
 
+//Basta dois toques ou dois cliques para exibir ou ocultar os posts, func chamada na Container
   function handleDoubleTouchInDockToReadPost() {
 
     const readPost = document.querySelector('.read-post') as HTMLElement;
@@ -29,6 +32,17 @@ export default function PostScreen() {
     }
   }
 
+//Basta um toque ou um clique para aumentar em 100vw ou reduzir para 60vw os cards, fun chamada no DescriptionToPage
+  function handleonClickToogleSize () {
+    const toogleSize = document.querySelector('.hover-post') as HTMLElement;
+  
+    if (toogleSize.style.width == '60vw') {
+      toogleSize.style.width ='100vw';
+    } else {
+      toogleSize.style.width = '60vw';
+    }
+  }
+
   return (
     <>
       <Wallpaper />
@@ -36,9 +50,16 @@ export default function PostScreen() {
         <Dock />
         <GroupElements className="read-post" >
           <BoardScroll className="board-scroll">
-            <DescriptionToPage className="hover-post">
+            <DescriptionToPage className="hover-post" onClick={handleonClickToogleSize}>
               <HeaderToDescriptionToPage>
-                <h1> <FaCircle size={25} className="indicator-active-or-disable" /> Aurora Alfa version</h1>
+              <h1> 
+                  <Link to="/posts">
+                    <FaArrowAltCircleLeft size={30}
+                    className="back_arrow_left" 
+                    />
+                  </Link> 
+                  Aurora Alpha Version
+                </h1>
               </HeaderToDescriptionToPage>
                 <p>
                   <ImgToDescription className="img-description-zero-left" src={img} alt="Dev Aurora" />
@@ -54,7 +75,6 @@ export default function PostScreen() {
                   🤍
                 </p>
             </DescriptionToPage>
-            <span></span>
           </BoardScroll>
         </GroupElements>
       </Container>

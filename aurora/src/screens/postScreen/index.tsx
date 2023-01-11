@@ -56,8 +56,8 @@ function handleonClickToogleSize () {
             <Card className="hover-post" onClick={handleonClickToogleSize}>
               <HeaderCard>
                 <CardTitle>
-                  <FaCircle size={25} className="indicator-active-or-disable" /> 
-                  <Link to="/aurora_places">Aurora Places</Link>
+                  <FaCircle size={25} className="indicator-active-or-disable" />
+                  <Link className="clicked" to="/aurora_places" >Aurora Places</Link>
                 </CardTitle>
               </HeaderCard>
                 <MdPlace
