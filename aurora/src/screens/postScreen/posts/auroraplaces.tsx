@@ -12,7 +12,8 @@ import {
   ImgToDescription
 } from '../posts/stylesPosts/sytles';
 
-import { FaCircle } from 'react-icons/fa';
+import { FaArrowAltCircleLeft } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 export default function PostScreen() {
 
@@ -28,6 +29,17 @@ const imgFoul = 'https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_1280
       readPost.style.display = 'none';
     }
   }
+
+  function handleonClickToogleSize () {
+    const toogleSize = document.querySelector('.hover-post') as HTMLElement;
+  
+    if (toogleSize.style.width == '60vw') {
+      toogleSize.style.width ='100vw';
+    } else {
+      toogleSize.style.width = '60vw';
+    }
+  }
+
   return (
     <>
       <Wallpaper />
@@ -35,9 +47,15 @@ const imgFoul = 'https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_1280
         <Dock />
         <GroupElements className="read-post" >
           <BoardScroll className="board-scroll">
-            <DescriptionToPage className="hover-post">
+            <DescriptionToPage className="hover-post" onClick={handleonClickToogleSize}>
               <HeaderToDescriptionToPage>
-                <h1> <FaCircle size={25} className="indicator-active-or-disable" /> Aurora Places</h1>
+                <h1> 
+                  <Link to="/posts">
+                    <FaArrowAltCircleLeft size={30}
+                    className="back_arrow_left" 
+                    />
+                  </Link> 
+                  Aurora Places</h1>
               </HeaderToDescriptionToPage>
                 <MdPlace
                   className="circle-icon"

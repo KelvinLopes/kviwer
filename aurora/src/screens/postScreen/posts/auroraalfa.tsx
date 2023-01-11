@@ -28,6 +28,7 @@ export default function PostScreen() {
       readPost.style.display = 'none';
     }
   }
+
   return (
     <>
       <Wallpaper />

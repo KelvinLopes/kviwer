@@ -106,16 +106,6 @@ textarea {
       }
     }
 
-      .indicator-active-or-close {
-
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        justify-content: center;
-        position: relative;
-        color: purple;
-    }
-
     position: relative;
 `;
 
@@ -147,13 +137,6 @@ export const GroupElementsInfo = styled.div`
         background: rgba(5, 5, 5, 1);
         transition: background-color  5s;
         z-index: 10;
-
-        .indicator-active-or-close {
-          color: rgba(206, 74, 211, 0.8);
-        }
-    }
-    .indicator-active-or-close:active {
-        color: rgba(246, 0, 22, 0.9);
     }
 
     .minimize:active {

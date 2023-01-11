@@ -4,6 +4,7 @@ import BoardScroll from '../../components/BoardScroll';
 import Wallpaper from './wallpaper/styles';
 import { MdPlace } from 'react-icons/md';
 
+
 import {
   Container,
   CardGroups,
@@ -21,6 +22,8 @@ export default function PostScreen() {
   const img = 'https://images.unsplash.com/photo-1565843708714-52ecf69ab81f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80';
   const imgFoul = 'https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_1280.png';
 
+
+//Basta dois toques ou dois cliques para exibir ou ocultar os posts, func chamada na Container
   function handleDoubleTouchInDockToReadPost() {
 
     const readPost = document.querySelector('.read-post') as HTMLElement;
@@ -32,6 +35,17 @@ export default function PostScreen() {
     }
   }
 
+//Basta um toque ou um clique para aumentar em 100vw ou reduzir para 60vw os cards, fun chamada no Card
+function handleonClickToogleSize () {
+  const toogleSize = document.querySelector('.hover-post') as HTMLElement;
+
+  if (toogleSize.style.width == '60vw') {
+    toogleSize.style.width ='100vw';
+  } else {
+    toogleSize.style.width = '60vw';
+  }
+}
+
   return (
     <>
       <Wallpaper />
@@ -39,9 +53,9 @@ export default function PostScreen() {
         <Dock />
         <CardGroups className="read-post" >
           <BoardScroll className="board-scroll">
-            <Card className="hover-post">
+            <Card className="hover-post" onClick={handleonClickToogleSize}>
               <HeaderCard>
-                <CardTitle> 
+                <CardTitle>
                   <FaCircle size={25} className="indicator-active-or-disable" /> 
                   <Link to="/aurora_places">Aurora Places</Link>
                 </CardTitle>
@@ -60,7 +74,7 @@ export default function PostScreen() {
               
           {/* Haverá atualização e novos styles componentes Card com map*/}
 
-            <Card className="hover-post">
+            <Card className="hover-post" onClick={handleonClickToogleSize}>
               <HeaderCard>
                 <CardTitle>
                   <FaCircle size={25} className="indicator-active-or-disable" />

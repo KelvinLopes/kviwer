@@ -2,9 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 
-
-
-
  .read-post {
     display: flex;
     transition: background 0.2s;
@@ -24,6 +21,19 @@ export const Container = styled.div`
     position: fixed;
     z-index: 1;
     overflow-y: hidden;
+
+    a {
+        text-decoration: none;
+        color: rgba(169, 169, 169, 0.9);
+    }
+
+    a:visited {
+        color: rgba(169, 169, 169, 0.9);
+    }
+
+    a:active {
+        color: rgba(167, 167, 167, 0.9);
+    }
 
 `;
 
@@ -138,14 +148,14 @@ export const GroupElements = styled.section`
 export const HeaderToDescriptionToPage = styled.header`
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     position: relative;
-
+  
     width: 100%;
 
-    indicator-active-or-disable {
+    back_arrow_left {
         
        
         top: auto;
@@ -208,7 +218,7 @@ export const DescriptionToPage = styled.article`
     }
 
     &:hover {
-        width: 100vw;
+        //width: 100vw;
         min-height: auto;
         top: 0;
         bottom: 50%auto;
@@ -229,6 +239,10 @@ export const DescriptionToPage = styled.article`
             color: purple;
         }
 
+        a:active {
+            color: rgba(167, 167, 167, 0.9);
+        }
+
         .board-scroll {
           z-index: 15;
         }
@@ -244,7 +258,7 @@ export const DescriptionToPage = styled.article`
             left: 0;
         }
 
-        .indicator-active-or-disable {
+        .back_arrow_left {
             color: purple;
         }
 

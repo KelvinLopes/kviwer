@@ -1,5 +1,4 @@
 import React  from 'react';
-import { FaCircle } from 'react-icons/fa';
 import { FiMaximize2, FiMinimize2 } from 'react-icons/fi';
 import Dock from '../../components/Dock';
 import Wallpaper from './wallpaper/styles';
@@ -104,7 +103,7 @@ export default function Info() {
 
       if (groupElements.style.width === '45vw') {
           groupElements.style.width = '100vw';
-           groupElements.style.maxWidth = '100vw';
+          groupElements.style.maxWidth = '100vw';
           groupElements.style.height = '100vh';
           groupElements.style.flex = '1';
           groupElements.style.left='0';
@@ -129,7 +128,7 @@ export default function Info() {
           groupElements.style.width = '45vw';
           groupElements.style.height = 'auto';
           groupElements.style.left='calc(50vw / 2)';
-         groupElements.style.flex = '1';
+          groupElements.style.flex = '1';
           minimizeButton.style.display = 'none';
           maximizeButton.style.display = 'block';
           maximizeButton.style.color = 'rgba(124, 0, 128, 1)';
@@ -148,14 +147,6 @@ export default function Info() {
           className="group-elements"
         >
           <div className="buttons-div">
-            <FaCircle
-              className="indicator-active-or-close"
-              size={30}
-              title='Fechar'
-            />
-
-          <span className="space-to-final-button"> </span>
-
             <FiMaximize2
               className="indicator-resize maximize"
               size={25}
@@ -171,7 +162,6 @@ export default function Info() {
               color="rgba(124, 0, 128, 1)"
               title="Restaurar"
             />
-
           </div>
 
           <GroupButtons>
@@ -189,7 +179,7 @@ export default function Info() {
             />
             <div className="div-about">
               <h2 className="title-info">Aurora</h2>
-              <p>Versão Alfa</p>
+              <p>Versão Alfa 0.08</p>
               <p>Em desenvolvimento com ReactJS e outras tecnologias</p>
             </div>
 

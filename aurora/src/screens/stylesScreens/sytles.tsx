@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 
- .read-post {
-    display: none;
+.read-post {
+    display: block;
     transition: background 0.2s;
     }
 
@@ -24,8 +24,8 @@ export const Container = styled.div`
 
     a {
         text-decoration: none;
+        color: rgba(169, 169, 169, 0.9);
     }
-
 `;
 
 
@@ -122,7 +122,7 @@ export const Card = styled.article`
     }
 
     &:hover {
-        width: 100vw;
+        //width: 100vw;
         min-height: auto;
         top: 0;
         bottom: 50%auto;
@@ -160,6 +160,14 @@ export const Card = styled.article`
 
         span {
           min-height: 6vh;
+        }
+
+        a {
+            color: purple;
+        }
+
+        h1 {
+            color: purple;
         }
 
     }

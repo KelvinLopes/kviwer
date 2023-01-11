@@ -4,14 +4,13 @@ import BoardScroll from '../../components/BoardScroll';
 import Wallpaper from './wallpaper/styles';
 
 import {
-     Container, 
-     //GroupElements,
-     //HeaderToDescriptionToPage,
-     //DescriptionToPage, 
-     //ImgToDescription,
-     //Header,
-     //FirstImg 
-    } from '../stylesScreens/sytles'; 
+    Container,
+    CardGroups,
+    Card,
+    HeaderCard,
+    ImageCard,
+    CardTitle
+  } from '../stylesScreens/sytles'; 
 
 import { FaCircle, FaArrowCircleDown } from 'react-icons/fa';
 
@@ -31,32 +30,42 @@ export default function HomeScreen() {
         }
     }
 
+    //Basta um toque ou um clique para aumentar em 100vw ou reduzir para 60vw os cards, fun chamada no Card
+    function handleonClickToogleSize () {
+        const toogleSize = document.querySelector('.hover-post') as HTMLElement;
+    
+        if (toogleSize.style.width == '60vw') {
+        toogleSize.style.width ='100vw'; 
+        } else {
+        toogleSize.style.width = '60vw';
+        }
+    }
+
     return (
         <>
-          {/*<Wallpaper />
+          <Wallpaper />
             <Container onDoubleClick={handleDoubleTouchInDockToReadPost} >
                 <Dock />
-                <GroupElements className="read-post" > 
+                <CardGroups className="read-post" > 
                 <BoardScroll>
-                    <DescriptionToPage className="hover-post">
-                        <HeaderToDescriptionToPage>
-                            <h1> <FaCircle size={25} className="indicator-active-or-disable" /> Aurora</h1>
-                        </HeaderToDescriptionToPage>
+                    <Card className="hover-post" onClick={handleonClickToogleSize}>
+                        <HeaderCard>
+                            <CardTitle>
+                            <FaCircle size={25} className="indicator-active-or-disable" /> 
+                             Aurora OS
+                            </CardTitle>
+                        </HeaderCard>
                         <p>
-                            <ImgToDescription className="img-description-zero-left" src={img} alt="img Fenonemo Aurora Boreal" />
-                            Trabalhando em um projeto incrivel que visa uma interface, moderna,
-                            limpa, bonita e inteligente.
-                            O nome Aurora, não é atoa, é bonito de se ver esse fenômeno.
+                            <ImageCard className="img-description-zero-left" src={img} alt="img Fenonemo Aurora Boreal" />
+                            Um sistema web da VirtuakeoBlog, super novidades, estão a caminho!
+                            Um sistema web? Isso mesmo, porque pensar diferente vale a pena.
+                            O projeto está um pouco lento em seu desenvolvimento, mas sigo confiante, em breve uma 
+                            versão beta grátis será liberada.
                         </p>
-                        <p>
-                            Prepare se para ver algo incrivél!
-                            🤍
-                        </p>
-                    </DescriptionToPage>
+                    </Card>
                     </BoardScroll>
-                </GroupElements>
+                </CardGroups>
             </Container>
-    */}
         </>
     );
 }
