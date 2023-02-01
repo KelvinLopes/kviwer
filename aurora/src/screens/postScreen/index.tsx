@@ -23,8 +23,8 @@ export default function PostScreen() {
   const imgFoul = 'https://cdn.pixabay.com/photo/2018/01/31/05/43/web-3120321_1280.png';
 
 
-//Basta dois toques ou dois cliques para exibir ou ocultar os posts, func chamada na Container
-  function handleDoubleTouchInDockToReadPost() {
+//Basta um toque no icone da dock ou do elemento para exibir ou ocultar os posts, func chamada na Container
+  function handleOneTouchInDockToReadPost() {
 
     const readPost = document.querySelector('.read-post') as HTMLElement;
 
@@ -35,25 +35,14 @@ export default function PostScreen() {
     }
   }
 
-//Basta um toque ou um clique para aumentar em 100vw ou reduzir para 60vw os cards, fun chamada no Card
-function handleonClickToogleSize () {
-  const toogleSize = document.querySelector('.hover-post') as HTMLElement;
-
-  if (toogleSize.style.width == '60vw') {
-    toogleSize.style.width ='100vw';
-  } else {
-    toogleSize.style.width = '60vw';
-  }
-}
-
   return (
     <>
       <Wallpaper />
-      <Container onDoubleClick={handleDoubleTouchInDockToReadPost} >
+      <Container onClick={handleOneTouchInDockToReadPost} >
         <Dock />
         <CardGroups className="read-post" >
           <BoardScroll className="board-scroll">
-            <Card className="hover-post" onClick={handleonClickToogleSize}>
+            <Card className="hover-post">
               <HeaderCard>
                 <CardTitle>
                   <FaCircle size={25} className="indicator-active-or-disable" />
@@ -74,7 +63,7 @@ function handleonClickToogleSize () {
               
           {/* Haverá atualização e novos styles componentes Card com map*/}
 
-            <Card className="hover-post" onClick={handleonClickToogleSize}>
+            <Card className="hover-post">
               <HeaderCard>
                 <CardTitle>
                   <FaCircle size={25} className="indicator-active-or-disable" />

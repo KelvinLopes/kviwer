@@ -2,6 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 
+.show-hidden-post {
+  z-index: 30;
+  position: relative;
+}
+
 .minimize {
   display: none;
 	color: rgba(124, 0, 128, 1);

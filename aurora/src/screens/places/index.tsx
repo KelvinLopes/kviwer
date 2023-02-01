@@ -16,67 +16,42 @@ import {
 }
   from './styles/styles';
 
-
 export default function Places() {
 
-    function resizeScreenMaxButton() {
-
-    const minimizeButton = document.querySelector('.minimize') as HTMLElement;
-    const maximizeButton = document.querySelector('.maximize') as HTMLElement;
-    const groupElements = document.querySelector('.group-elements') as HTMLElement;
-
-      groupElements.style.width = '45vw';
-
-      if (groupElements.style.width === '45vw') {
-          groupElements.style.width = '100vw';
-          groupElements.style.maxWidth = '100vw';
-          groupElements.style.minHeight = '100vh';
-
-          groupElements.style.flex = '1';
-          groupElements.style.left='0';
-          groupElements.style.zIndex='20';
-          minimizeButton.style.display = 'block';
-          maximizeButton.style.display = 'none';
-          minimizeButton.style.color = 'rgba(124, 0, 128, 1)';
-          groupElements.style.borderRadius = '0';
-          groupElements.style.top = '0';
-          groupElements.style.transition= 'width 2s, height 4s';
-      }
+  //Basta dois toques  para aumentar em 100vw ou reduzir para 60vw os cards, fun chamada no Container
+  function handleonClickToogleSize () {
+    const toogleSize = document.querySelector('.group-elements') as HTMLElement;
+  
+    if (toogleSize.style.width == '45vw') {
+      toogleSize.style.width ='100vw';
+      toogleSize.style.maxWidth = '100vw';
+      toogleSize.style.minHeight = '100vh';
+      toogleSize.style.flex = '1';
+      toogleSize.style.left='0';
+      toogleSize.style.zIndex='20';
+      toogleSize.style.borderRadius = '0';
+      toogleSize.style.top = '0';
+      toogleSize.style.transition= 'width 2s, height 4s';
+    } else {
+      toogleSize.style.width = '45vw';
+      toogleSize.style.minHeight = 'auto'; 
+      toogleSize.style.left='calc(50vw / 2)';
+      toogleSize.style.zIndex='1';
+      toogleSize.style.borderRadius = '0.8rem';
+      toogleSize.style.top = 'calc(100% + 7rem)';
+      toogleSize.style.transition= 'width 2s, height 4s';
+    }
   }
 
-   function resizeScreenMinButton() {
-
-    const minimizeButton = document.querySelector('.minimize') as HTMLElement;
-    const maximizeButton = document.querySelector('.maximize') as HTMLElement;
-    const groupElements = document.querySelector('.group-elements') as HTMLElement;
-
-    groupElements.style.width = '100vw';
-
-       if (groupElements.style.width === '100vw') {
-          groupElements.style.width = '45vw';
-          groupElements.style.minHeight = 'auto';
-          
-          groupElements.style.left='calc(50vw / 2)';
-          minimizeButton.style.display = 'none';
-          maximizeButton.style.display = 'block';
-          groupElements.style.zIndex='1';
-          maximizeButton.style.color = 'rgba(124, 0, 128, 1)';
-          groupElements.style.borderRadius = '0.8rem';
-          groupElements.style.top = 'calc(100% + 7rem)';
-          groupElements.style.transition= 'width 2s, height 4s';
-      }
-
-    }
-
+   
+//Com um clique exibe e oculta informações é chamada no botão FaCircle
     function handleShowHidePlaces( ) {
-
-        const readPost= document.querySelector('.places') as HTMLElement;
-        const hiddenShowPost = document.querySelector('.show-hidden-post') as HTMLElement;
-
-
+      const readPost= document.querySelector('.places') as HTMLElement;
+  
         if(readPost.style.display === 'none') {
             readPost.style.display = 'flex';
-        }else {
+        }
+        else {
             readPost.style.display = 'none';
         }
     }
@@ -84,37 +59,11 @@ export default function Places() {
   return (
   <>
       <Wallpaper />
-      <Container>
+      <Container onDoubleClick={handleonClickToogleSize}>
         <Dock />
         <GroupElementsPlace
           className="group-elements"
         >
-          <div className="buttons-div">
-            <FaCircle
-              className="indicator-active-or-close"
-              size={30}
-              title='Você está em Aurora Places'
-            />
-
-          <span className="space-to-final-button"> </span>
-
-            <FiMaximize2
-              className="indicator-resize maximize"
-              size={25}
-              onClick={resizeScreenMaxButton}
-              color="rgba(124, 0, 128, 1)"
-              title="Maximizar"
-            />
-
-            <FiMinimize2
-              className="indicator-resize minimize"
-              size={25}
-              onClick={resizeScreenMinButton}
-              color="rgba(124, 0, 128, 1)"
-              title="Restaurar"
-            />
-
-          </div>
 
           <Description>
           <MdPlace
@@ -128,13 +77,15 @@ export default function Places() {
 
            <Input placeholder="Faça sua busca" className="input"/>
 
+          
            <FaCircle 
               className="show-hidden-post"
               color="rgba(141, 144, 215, 1)"
               size={30}
               title="Mostrar/ocultar Places"
-              onDoubleClick={handleShowHidePlaces}
+              onClick={handleShowHidePlaces}
             />
+        
 
           <CardContainer className="places">
            <Card className="card">

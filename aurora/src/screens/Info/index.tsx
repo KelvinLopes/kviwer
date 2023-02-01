@@ -1,8 +1,7 @@
 import React  from 'react';
-import { FiMaximize2, FiMinimize2 } from 'react-icons/fi';
 import Dock from '../../components/Dock';
 import Wallpaper from './wallpaper/styles';
-import imgInfo from '../../assets/logo.svg';
+import imgInfo from '../../assets/wallpapers/Wallpaper_Aurora_Oficial.png';
 
 import {
   Container,
@@ -16,7 +15,36 @@ import {
 }
   from './styles/styles';
 
+
+
 export default function Info() {
+
+
+   //Basta dois toques  para aumentar em 100vw ou reduzir para 60vw os cards, fun chamada no Container
+   function handleonClickToogleSize () {
+    const toogleSize = document.querySelector('.group-elements') as HTMLElement;
+  
+    if (toogleSize.style.width == '45vw') {
+      toogleSize.style.width ='100vw';
+      toogleSize.style.maxWidth = '100vw';
+      toogleSize.style.minHeight = '100vh';
+      toogleSize.style.flex = '1';
+      toogleSize.style.left='0';
+      toogleSize.style.zIndex='20';
+      toogleSize.style.borderRadius = '0';
+      toogleSize.style.top = '0';
+      toogleSize.style.transition= 'width 2s, height 4s';
+    } else {
+      toogleSize.style.width = '45vw';
+      toogleSize.style.minHeight = 'auto'; 
+      toogleSize.style.left='calc(50vw / 2)';
+      toogleSize.style.zIndex='1';
+      toogleSize.style.borderRadius = '0.8rem';
+      toogleSize.style.top = 'calc(100% + 7rem)';
+      toogleSize.style.transition= 'width 2s, height 4s';
+    }
+  }
+
 
   function Feedback() {
 
@@ -93,77 +121,16 @@ export default function Info() {
     }
   }
 
-    function resizeScreenMaxButton() {
-
-    const minimizeButton = document.querySelector('.minimize') as HTMLElement;
-    const maximizeButton = document.querySelector('.maximize') as HTMLElement;
-    const groupElements = document.querySelector('.group-elements') as HTMLElement;
-
-      groupElements.style.width = '45vw';
-
-      if (groupElements.style.width === '45vw') {
-          groupElements.style.width = '100vw';
-          groupElements.style.maxWidth = '100vw';
-          groupElements.style.height = '100vh';
-          groupElements.style.flex = '1';
-          groupElements.style.left='0';
-          minimizeButton.style.display = 'block';
-          maximizeButton.style.display = 'none';
-          minimizeButton.style.color = 'rgba(124, 0, 128, 1)';
-          groupElements.style.borderRadius = '0';
-          groupElements.style.top = '0';
-          groupElements.style.transition= 'width 2s, height 4s';
-      }
-  }
-
-   function resizeScreenMinButton() {
-
-    const minimizeButton = document.querySelector('.minimize') as HTMLElement;
-    const maximizeButton = document.querySelector('.maximize') as HTMLElement;
-    const groupElements = document.querySelector('.group-elements') as HTMLElement;
-
-    groupElements.style.width = '100vw';
-
-       if (groupElements.style.width === '100vw') {
-          groupElements.style.width = '45vw';
-          groupElements.style.height = 'auto';
-          groupElements.style.left='calc(50vw / 2)';
-          groupElements.style.flex = '1';
-          minimizeButton.style.display = 'none';
-          maximizeButton.style.display = 'block';
-          maximizeButton.style.color = 'rgba(124, 0, 128, 1)';
-          groupElements.style.borderRadius = '0.8rem';
-          groupElements.style.top = 'calc(100% + 7rem)';
-          groupElements.style.transition= 'width 2s, height 4s';
-      }
-    }
+   
 
   return (
   <>
       <Wallpaper />
-      <Container>
+      <Container onDoubleClick={handleonClickToogleSize}>
         <Dock />
         <GroupElementsInfo
           className="group-elements"
         >
-          <div className="buttons-div">
-            <FiMaximize2
-              className="indicator-resize maximize"
-              size={25}
-              onClick={resizeScreenMaxButton}
-              color="rgba(124, 0, 128, 1)"
-              title="Maximizar"
-            />
-
-            <FiMinimize2
-              className="indicator-resize minimize"
-              size={25}
-              onClick={resizeScreenMinButton}
-              color="rgba(124, 0, 128, 1)"
-              title="Restaurar"
-            />
-          </div>
-
           <GroupButtons>
             <Button className="text-button button-about" onClick={About}>Sobre</Button>
             <Button className="text-button button-feedback" onClick={Feedback}>Feedback</Button>

@@ -2,11 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 
-.minimize {
-  display: none;
-	color: rgba(124, 0, 128, 1);
-}
-
 .button-about {
 	background: rgba(124, 0, 128, 0.5);
 }
@@ -74,12 +69,11 @@ textarea {
       }
 
     img {
-        width: auto;
-        height: auto;
-
-        border-radius: 50%;
+        width: 35%;
+        height: 50%;
         margin: 0 auto;
         position: relative;
+        border-radius: 15%;
 
         display: flex;
         flex-direction: column;
@@ -114,16 +108,15 @@ export const GroupElementsInfo = styled.div`
     user-select: none;
     position: absolute;
     width: 45vw;
-    max-width: 100vw;
     top: calc(100% + 7rem);
     left: calc( 50vw / 2 );
     margin:  0 auto;
     background: rgba(250, 250, 250, 0.9);
     border-radius: 0.8rem;
     padding: 15px 5px;
-  transition: background-color 4s;
+    transition: background-color 4s;
 
-& + div {
+ + div {
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -139,35 +132,7 @@ export const GroupElementsInfo = styled.div`
         z-index: 10;
     }
 
-    .minimize:active {
-      color: rgba(132, 132, 132, 1);
-    }
-
-    .maximize:active {
-      color: rgba(132, 132, 132, 1);
-    }
-
-    .buttons-div {
-      display: flex;
-      width: 95%;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      flex: 1;
-
-      & + svg {
-         display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-      }
-
-      margin: 0 auto;
-      left: 0;
-      right: 0;
-      position: relative;
-    }
-
+    
     .space-to-final-button {
       width: 5%;
     }

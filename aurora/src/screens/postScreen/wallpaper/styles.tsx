@@ -1,5 +1,5 @@
 import  {  createGlobalStyle  } from 'styled-components';
-import WallpaperAuroraBoreal from '../../../assets/wallpapers/Aurora3.jpg';
+import WallpaperAuroraBoreal from '../../../assets/wallpapers/Wallpaper_Aurora_Oficial.png';
 
 export default createGlobalStyle`
 

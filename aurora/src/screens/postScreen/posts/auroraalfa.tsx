@@ -20,8 +20,8 @@ export default function PostScreen() {
   const img = 'https://images.unsplash.com/photo-1565843708714-52ecf69ab81f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80';
   const imgTwo = 'https://images.unsplash.com/photo-1508739826987-b79cd8b7da12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=666&q=80';
 
-//Basta dois toques ou dois cliques para exibir ou ocultar os posts, func chamada na Container
-  function handleDoubleTouchInDockToReadPost() {
+//Basta um toques ou um clique no icone da dock ou do elemento  para exibir ou ocultar os posts, func chamada na Container
+  function handleOneTouchInDockToReadPost() {
 
     const readPost = document.querySelector('.read-post') as HTMLElement;
 
@@ -33,7 +33,7 @@ export default function PostScreen() {
   }
 
 //Basta um toque ou um clique para aumentar em 100vw ou reduzir para 60vw os cards, fun chamada no DescriptionToPage
-  function handleonClickToogleSize () {
+  function handleOnDoubleToogleSize () {
     const toogleSize = document.querySelector('.hover-post') as HTMLElement;
   
     if (toogleSize.style.width == '60vw') {
@@ -46,12 +46,12 @@ export default function PostScreen() {
   return (
     <>
       <Wallpaper />
-      <Container onDoubleClick={handleDoubleTouchInDockToReadPost} >
+      <Container onClick={handleOneTouchInDockToReadPost} >
         <Dock />
         <GroupElements className="read-post" >
           <BoardScroll className="board-scroll">
-            <DescriptionToPage className="hover-post" onClick={handleonClickToogleSize}>
-              <HeaderToDescriptionToPage>
+            <DescriptionToPage className="hover-post" onDoubleClick={handleOnDoubleToogleSize}>
+              <HeaderToDescriptionToPage >
               <h1> 
                   <Link to="/posts">
                     <FaArrowAltCircleLeft size={30}
